@@ -16,17 +16,17 @@
     "env": {
         "BOT_TOKEN": {
             "description": "Obtain a Telegram bot token by contacting @BotFather",
-            "required": true
+            "required": true,
              "value": "5334185346:AAEtn5qU2_byKXBwGU97NeVJMcK0NNcVKMM"
         },
         "API_ID": {
             "description": "API_ID of your Telegram Account my.telegram.org/apps",
-            "required": true
+            "required": true,
              "value": "7126006"
         },
         "API_HASH": {
             "description": "API_HASH of your Telegram Account my.telegram.org/apps",
-            "required": true
+            "required": true,
              "value": "f92b05be529835381859ead64a195fa2"
         }
       }
