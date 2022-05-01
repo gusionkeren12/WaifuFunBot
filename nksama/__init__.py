@@ -1,5 +1,4 @@
 from pyrogram import filters , Client
-from redis import Redis
 import os 
 
 bot = Client(
