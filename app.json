@@ -17,14 +17,17 @@
         "BOT_TOKEN": {
             "description": "Obtain a Telegram bot token by contacting @BotFather",
             "required": true
+             "value": ""
         },
         "API_ID": {
             "description": "API_ID of your Telegram Account my.telegram.org/apps",
             "required": true
+             "value": ""
         },
         "API_HASH": {
             "description": "API_HASH of your Telegram Account my.telegram.org/apps",
             "required": true
+             "value": ""
         }
       }
    }
