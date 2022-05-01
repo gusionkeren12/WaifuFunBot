@@ -1,0 +1,30 @@
+{
+    "name": "Komi-san Bot",
+    "description": "Telegram Group Management Bot Written In Python Using Pyrogram.",
+    "repository": "https://github.com/ctzfamily/komi-san",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg",
+    "keywords": [
+    "python3",
+    "telegram",
+    "bot",
+    "youtube",
+    "telegram-bot",
+    "pyrogram"
+    ],
+    "repository": "https://github.com/ctzfamily/komi-san",
+    "stack": "container",
+    "env": {
+        "BOT_TOKEN": {
+            "description": "Obtain a Telegram bot token by contacting @BotFather",
+            "required": true
+        },
+        "API_ID": {
+            "description": "API_ID of your Telegram Account my.telegram.org/apps",
+            "required": true
+        },
+        "API_HASH": {
+            "description": "API_HASH of your Telegram Account my.telegram.org/apps",
+            "required": true
+        }
+      }
+   }
