@@ -9,4 +9,4 @@ def waifu(_,message):
     url = "https://api.waifu.pics/sfw/waifu"
      r = requests.get(url)
      e = r.json()
-    message.reply_photo(photo=e["url"])
+  await bot.send_photo(message.chat.id, photo=e["url"], caption="Waifu images 💕💕")
