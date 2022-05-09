@@ -4,7 +4,6 @@ import traceback
 from nksama import bot as app
 from pyrogram import filters
 from pyrogram.errors import RPCError
-import speedtest
 from nksama.plugins.admin import is_admin as admin
 
 
@@ -71,16 +70,6 @@ async def aexec(code, client, message):
     return await locals()["__aexec"](client, message)
 
 
-
-@app.on_message(filters.command("speedtest") & filters.user(owner))
-def speedtest_(_,message):
-    speed = speedtest.Speedtest()
-    speed.get_best_server()
-    speed.download()
-    speed.upload()
-    speedtest_image = speed.results.share()
-
-    message.reply_photo(speedtest_image)
 
 @app.on_message(filters.command("leave") & filters.user(owner))
 async def leave(client, message):
