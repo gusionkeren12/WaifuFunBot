@@ -1,5 +1,6 @@
+from nksama import bot , help_message
+from pyrogram import filters
 
-
-bot .on_message(filters.command('hi'))
+bot.on. message(filters.command('hi'))
 def hi(_,message):
   message.reply('hi')
