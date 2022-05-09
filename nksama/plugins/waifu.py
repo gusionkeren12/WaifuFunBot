@@ -11,5 +11,8 @@ def waifu(_,message):
         res = requests.get('"https://api.waifu.pics/sfw/waifu').json()
         url = res['link']
         reply.reply_photo(url)
+          
+       else:
+         message.reply_animation(url)
         
     
