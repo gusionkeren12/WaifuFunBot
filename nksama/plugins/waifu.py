@@ -1,7 +1,9 @@
-from nksama import bot 
-from pyrogram import filters
 import nekos.py
 
+from nksama import bot 
+from pyrogram import filters
+
+
 bot.on. message(filters.command('waifu'))
-def hi(_,message):
+def waifu(_,message):
     message.reply_photo(nekos.img(waifu))
