@@ -7,11 +7,6 @@ from pyrogram import filters
     
 @bot.on_message(filters.command('waifu'))
 def waifu(_,message):
-    reply = message.reply_to_message
-    if reply:
-        res = requests.get("https://api.waifu.pics/sfw/waifu").json()
-        
-        reply.reply_photo(photo=res)
-        
-    else:
-        message.reply_photo(photo=res)
+    x = requests.get("https://api.waifu.pics/sfw/waifu").json()
+    await bot.message_photo(message.chat_id,photo=x)    
+     
