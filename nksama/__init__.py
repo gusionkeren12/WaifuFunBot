@@ -11,5 +11,5 @@ bot = Client(
 
 SUPPORT_CHAT = os.environ.get('SUPPORT_CHAT', None)
 UPDATES_CHANNEL = os.environ.get('UPDATES_CHANNEL', None)
-
+ SUPPORT_CHAT = Config.SUPPORT_CHAT
 help_message = []
