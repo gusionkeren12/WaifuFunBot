@@ -13,12 +13,5 @@ help_message = []
 
 
 
-SUPPORT_CHAT = os.environ.get('SUPPORT_CHAT', None)
-UPDATES_CHANNEL = os.environ.get('UPDATES_CHANNEL', None)
-
- from nksama.config import config as Config
-
- SUPPORT_CHAT = Config.SUPPORT_CHAT
- UPDATES_CHANNEL = Config. UPDATES_CHANNEL
 
     
