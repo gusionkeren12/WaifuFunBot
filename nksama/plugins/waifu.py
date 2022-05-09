@@ -1,4 +1,4 @@
-
+import requests
 
 from nksama import bot 
 from pyrogram import filters
