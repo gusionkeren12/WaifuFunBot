@@ -36,6 +36,6 @@ def wall(_,message):
 
     walll = fk.get_wallpaper()
     preview , image = walll['preview'] , walll['image']
-    message.reply_photo(preview , caption="preview")
+    message.reply_photo(preview , caption="Preview")
     message.reply_document(image)
 
