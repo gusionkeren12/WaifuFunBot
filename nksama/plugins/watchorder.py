@@ -27,7 +27,7 @@ def fk(_,query):
         else:
             ani = x
     query.message.delete()
-    query.message.reply(f'**Results for {anime_}**\n\n```{ani}```')
+    query.message.reply(f'**➢ Results For {anime_}**\n\n```{ani}```')
 
 
 @bot.on_message(filters.command('watchorder'))
@@ -39,7 +39,7 @@ def watchorder(_,message):
     for x in res:
         keyboard.append([InlineKeyboardButton(x['value'] , callback_data="fk:{}".format(x['id']))])
 
-    bot.send_message(message.chat.id , "results for {}".format(anime_) , reply_markup=InlineKeyboardMarkup(keyboard))
+    bot.send_message(message.chat.id , "**➢ Results For {}**".format(anime_) , reply_markup=InlineKeyboardMarkup(keyboard))
 
 
 help_message.append({"Module_Name": "extra"})
