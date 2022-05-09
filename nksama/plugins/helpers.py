@@ -47,6 +47,10 @@ def callback_help(_,query):
             callback_module_name = query.data.split(':')[1]
             txt =  helptext_
     
+      query.message.edit(txt)
+        except Exception as e:
+            bot.send_message("@unitedsupport", f"error in help:\n\n{e}")
+            
     if query.data == "help":
         keyboard = []
         for x in help_message:
