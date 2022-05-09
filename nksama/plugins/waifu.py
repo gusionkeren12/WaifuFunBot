@@ -11,7 +11,7 @@ def waifu(_,message):
     if reply:
         res = requests.get("https://api.waifu.pics/sfw/waifu").json()
         
-        reply.reply_photo(res)
+        reply.reply_photo(photo=res)
         
     else:
-        message.reply_photo(res)
+        message.reply_photo(photo=res)
