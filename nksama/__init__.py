@@ -9,7 +9,12 @@ bot = Client(
     plugins=dict(root=f"{__name__}/plugins")
 )
 
+help_message = []
+
+
+
 SUPPORT_CHAT = os.environ.get('SUPPORT_CHAT', None)
 UPDATES_CHANNEL = os.environ.get('UPDATES_CHANNEL', None)
+
  SUPPORT_CHAT = Config.SUPPORT_CHAT
-help_message = []
+ UPDATES_CHANNEL = Config. UPDATES_CHANNEL
