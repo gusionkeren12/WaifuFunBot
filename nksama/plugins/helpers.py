@@ -49,9 +49,7 @@ def callback_help(_,query):
             txt =  helptext_
 
             query.message.edit_text(txt)
-        except Exception as e:
-            bot.send_message( -1001590378481 , f"error in help:\n\n{e}")
-    
+        
     if query.data == "help":
         keyboard = []
         for x in help_message:
