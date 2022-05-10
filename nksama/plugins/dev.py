@@ -1,11 +1,21 @@
 import io
 import sys
+import time
 import traceback
-from nksama import bot as app
+from subprocess import getoutput as run
+
 from pyrogram import filters
-from pyrogram.errors import RPCError
-from nksama.plugins.admin import is_admin as admin
-from nksama.config import dev_user
+from pyrogram.types import (
+    CallbackQuery,
+    InlineKeyboardButton,
+    InlineKeyboardMarkup,
+    Message,
+)
+from requests import post
+
+from nksama import dev_user, StartTime
+from nksama import bot
+from nksama import bot as app
 
 
 @bot.on_message(
