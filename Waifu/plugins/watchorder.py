@@ -2,8 +2,8 @@ from requests import get
 from pyrogram import filters , Client
 from pyrogram.types import *
 from bs4 import BeautifulSoup
-from nksama import help_message
-from nksama import bot
+from Waifu import help_message
+from Waifu import bot
 
 
 def call_back_in_filter(data):
