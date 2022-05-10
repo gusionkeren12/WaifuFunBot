@@ -52,6 +52,6 @@ async def waifu(bot, m: Message):
 async def hmeme(bot, m: Message):
           res = requests.get('https://nksamamemeapi.pythonanywhere.com').json()
           img = res['image']
-          title = res['title"]
+          title = res['title']
       await m.reply_photo(img, caption=title)
         
