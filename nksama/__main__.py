@@ -1,10 +1,8 @@
 from nksama import bot
 import asyncio
 import logging
-import uvloop
 from nksama.config import SUPPORT_CHAT
 
-loop = asyncio.get_event_loop()
 
 logging.basicConfig(
     filename="logs.txt",
