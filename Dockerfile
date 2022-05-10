@@ -1,9 +1,11 @@
-FROM python:3.9.1-buster
+FROM python:3.10.0
 
-WORKDIR /root/nksama
+WORKDIR /root/Waifu
 
 COPY . .
 
-RUN pip install -r requirements.txt
+RUN pip3 install --upgrade pip setuptools
 
-CMD ["python3","-m","nksama"]
+RUN pip install -U -r requirements.txt
+
+CMD ["python3","-m","Waifu"]
