@@ -25,6 +25,6 @@ def pat(_,message):
 
 @bot.on_message(filters.command("waifu"))
 async def waifu(bot, m: Message):
-        m.reply_photo(nekos.img("waifu"))
+      await m.reply_photo(nekos.img("waifu"))
 
         
