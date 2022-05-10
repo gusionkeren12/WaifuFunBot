@@ -1,9 +1,9 @@
 from requests import get
 import random
 from pyrogram import filters
-from nksama import bot
+from Waifu import bot
 import os
-from nksama.config import WALL_API_KEY
+from Waifu.config import WALL_API_KEY
 
 
 
