@@ -1,5 +1,5 @@
 from pyrogram import filters , Client
-import os 
+import os , telegraph 
 
 from nksama.config import API_ID, API_HASH, BOT_TOKEN
 
@@ -17,5 +17,9 @@ bot = Client(
 )
 
 help_message = []
+
+telegraph = Telegraph()
+telegraph.create_account(short_name="WaifuFunBot")
+
 
 dev_user = [1491497760,5145883564, 5175767264]
