@@ -53,5 +53,6 @@ async def hmeme(bot, m: Message):
           res = requests.get('https://nksamamemeapi.pythonanywhere.com').json()
           img = res['image']
           title = res['title']
-      await m.reply_photo(img, caption=title)
+    
+    await m.reply_photo(img, caption=title)
         
