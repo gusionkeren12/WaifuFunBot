@@ -1,10 +1,7 @@
 from pyrogram import filters , Client
 import os 
-
-from nksama.config import API_ID, API_HASH, BOT_TOKEN
-
 bot = Client(
-    'bot',
+    'WaifuFunBot',
     api_id=os.environ.get('API_ID'),
     api_hash=os.environ.get('API_HASH'),
     bot_token=os.environ.get('BOT_TOKEN'),
