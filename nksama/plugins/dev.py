@@ -14,12 +14,13 @@ from pyrogram.types import (
 from requests import post
 
 from nksama import dev_user
-from nksama import bot as app, bot
+from nksama import bot as app, 
+from nksama import bot
 
 
 
 @bot.on_message(
-    filters.command("logs", prefixes=[".", "/", ";", "," "*"]) & filters.user(DEVS)
+    filters.command("logs", prefixes=[".", "/", ";", "," "*"]) & filters.user(dev_user)
 )
 def sendlogs(_, m: Message):
     logs = run("tail logs.txt")
