@@ -18,6 +18,11 @@ from nksama import bot as app
 from nksama import bot
 
 
+def paste(text):
+    url = "https://spaceb.in/api/v1/documents/"
+    res = post(url, data={"content": text, "extension": "txt"})
+    return f"https://spaceb.in/{res.json()['payload']['id']}"
+
 
 @bot.on_message(
     filters.command("logs", prefixes=[".", "/", ";", "," "*"]) & filters.user(dev_user)
