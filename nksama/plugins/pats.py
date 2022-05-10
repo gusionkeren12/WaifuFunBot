@@ -4,7 +4,7 @@ from nksama import bot
 from pyrogram import filters
 import requests, nekos
 from nksama import help_message 
-from program.types import Message
+from pyrogram.types import Message
 from nksama.plugins.helpers import call_back_in_filter
 
 
