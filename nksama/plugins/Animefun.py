@@ -56,7 +56,7 @@ def xmeme(_,message):
         res = requests.get('https://nksamamemeapi.pythonanywhere.com').json()
         img = res['image']
         title = res['title']
-        reply.reply_photo(img,caption=title)
+        reply.reply_photo(photo=img,caption=title)
         
     else:
         message.reply_photo(img,caption=title)
