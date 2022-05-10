@@ -1,5 +1,6 @@
 from pyrogram import filters , Client
 import os 
+
 bot = Client(
     'WaifuFunBot',
     api_id=os.environ.get('API_ID'),
