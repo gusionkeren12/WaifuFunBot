@@ -13,9 +13,9 @@ from pyrogram.types import (
 )
 from requests import post
 
-from nksama import dev_user, StartTime
-from nksama import bot
-from nksama import bot as app
+from nksama import dev_user
+from nksama import bot as app, bot
+
 
 
 @bot.on_message(
