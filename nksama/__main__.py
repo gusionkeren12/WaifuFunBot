@@ -1,9 +1,9 @@
 from nksama import bot
-
+from nksama.config import SUPPORT_CHAT
 
 
 if __name__ == "__main__":
     bot.run()
     
-    bot.send_photo("@unitedsupport" , photo="https://telegra.ph/file/0f4b6a40dc4eb52587234.jpg", caption="YuukiRobot Alive!")
+    bot.send_message(f"{SUPPORT_CHAT}" , "@WaifuFunBot Alive!")
     
