@@ -48,7 +48,6 @@ async def waifu(bot, m: Message):
       await m.reply_photo(nekos.img("waifu"))
         
     
-    
 @bot.on_message(filters.command('truth'))
 def truth(_,message):
     reply = message.reply_to_message
@@ -59,6 +58,3 @@ def truth(_,message):
         
     else:
         message.reply_photo(t_url)
-        
-        
-           
