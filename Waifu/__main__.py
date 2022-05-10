@@ -1,5 +1,6 @@
 from Waifu import bot
 import logging
+import asyncio
 from Waifu.config import SUPPORT_CHAT
 
 loop = asyncio.get_event_loop()
