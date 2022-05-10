@@ -3,9 +3,8 @@ import os
 from pyrogram import filters
 from pyrogram.types import Message
 
-from Nanamori import DEVS, bot
-from Nanamori.utils.sections import section
-#from Nanamori.utils.dbfunctions import is_gbanned_user
+from nksama import dev_user, bot
+from nksama.utils.sections import section
 
 async def get_user_info(user, already=False):
     if not already:
@@ -18,16 +17,14 @@ async def get_user_info(user, already=False):
     mention = user.mention("Link")
     dc_id = user.dc_id
     photo_id = user.photo.big_file_id if user.photo else None
-    #is_gbanned = await is_gbanned_user(user_id)
-    is_dev = user_id in DEVS
+    is_dev = user_id in dev_user
     body = {
-        "➢ ID": user_id,
-        "➢ DC": dc_id,
-        "➢ Name": [first_name],
-        "➢ Username": [("@" + username) if username else "Null"],
-        "➢ Mention": [mention],
-        "➢ Dev": is_dev,
-        #"Gbanned": is_gbanned,
+        "• ID": user_id,
+        "• DC": dc_id,
+        "• Name": [first_name],
+        "• Username": [("@" + username) if username else "Null"],
+        "• Mention": [mention],
+        "• Devloper": is_dev,
     }
     caption = section("User info", body)
     return [caption, photo_id]
