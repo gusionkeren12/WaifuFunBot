@@ -2,11 +2,11 @@ from re import escape
 from pyrogram.types.bots_and_keyboards.inline_keyboard_button import InlineKeyboardButton
 from pyrogram.types.bots_and_keyboards.inline_keyboard_markup import InlineKeyboardMarkup
 from pyrogram.types.messages_and_media import message
-from nksama import bot
-from nksama.plugins.helpers import call_back_in_filter 
+from Waifu import bot
+from Waifu.plugins.helpers import call_back_in_filter 
 
 from pyrogram import filters
-from nksama import help_message
+from Waifu import help_message
 
 
 sudos = [1915921298 , 1802324609 , 1633375527 , 1635151800]
