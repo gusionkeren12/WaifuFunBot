@@ -4,7 +4,7 @@ import logging
 import uvloop
 from pyrogram import idle
 
-from nksama import aiohttpsession, bot, log,
+from nksama import aiohttpsession, bot, log
 from nksama.config import SUPPORT_CHAT
 from nksama.utils.dbfunctions import clean_restart_stage
 
