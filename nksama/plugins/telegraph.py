@@ -1,7 +1,7 @@
 from pyrogram import filters
 from pyrogram.types import Message
 
-from nksama import app, telegraph
+from nksama import bot as app, telegraph
 
 
 @app.on_message(filters.command("telegraph"))
