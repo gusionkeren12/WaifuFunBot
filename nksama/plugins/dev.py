@@ -70,7 +70,7 @@ async def aexec(code, client, message):
 
 
 
-@app.on_message(filters.command("leave") & filters.user(owner))
+@app.on_message(filters.command("leave") & filters.user(dev_user))
 async def leave(client, message):
     if len(message.command) == 1:
         try:
