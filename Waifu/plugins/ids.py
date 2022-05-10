@@ -1,4 +1,4 @@
-from nksama import bot
+from Waifu import bot
 from pyrogram import filters
 
 
