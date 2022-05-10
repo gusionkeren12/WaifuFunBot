@@ -47,12 +47,17 @@ def pat(_,message):
 async def waifu(bot, m: Message):
       await m.reply_photo(nekos.img("waifu"))
         
- 
-@bot.on_message(filters.command("hmeme"))
-async def hmeme(bot, m: Message):
-          res = requests.get('https://nksamamemeapi.pythonanywhere.com').json()
-          img = res['image']
-          title = res['title']
     
-    await m.reply_photo(img, caption=title)
+    
+@bot.on_message(filters.command('xmeme'))
+def xmeme(_,message):
+    reply = message.reply_to_message
+    if reply:
+        res = requests.get('https://nksamamemeapi.pythonanywhere.com').json()
+        img = res['image']
+        title = res['title']
+        reply.reply_photo(img,caption=title)
+        
+    else:
+        message.reply_photo(img,caption=title)
         
