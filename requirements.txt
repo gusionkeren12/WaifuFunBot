@@ -1,5 +1,6 @@
 
 nekos.py
+bs4
 aiohttp
 uvloop
 pyrogram
