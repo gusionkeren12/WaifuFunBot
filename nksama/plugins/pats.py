@@ -2,8 +2,9 @@ from pyrogram.types.bots_and_keyboards.inline_keyboard_button import InlineKeybo
 from pyrogram.types.bots_and_keyboards.inline_keyboard_markup import InlineKeyboardMarkup
 from nksama import bot
 from pyrogram import filters
-import requests
+import requests, nekos
 from nksama import help_message 
+from program.types import Message
 from nksama.plugins.helpers import call_back_in_filter
 
 
@@ -20,5 +21,10 @@ def pat(_,message):
         
     else:
         message.reply_animation(url)
+        
+
+@bot.on_message(filters.command("waifu"))
+async def waifu(bot, m: Message):
+        m.reply_photo(nekos.img("waifu"))
 
         
