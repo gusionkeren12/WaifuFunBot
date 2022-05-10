@@ -1,8 +1,6 @@
-from nksama import bot
-import asyncio
+from Waifu import bot
 import logging
-import uvloop
-from nksama.config import SUPPORT_CHAT
+from Waifu.config import SUPPORT_CHAT
 
 loop = asyncio.get_event_loop()
 
