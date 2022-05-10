@@ -1,6 +1,8 @@
 from pyrogram import filters , Client
 import os 
 
+from nksama.config import API_ID, API_HASH, BOT_TOKEN
+
 bot = Client(
     'bot',
     api_id=os.environ.get('API_ID'),
