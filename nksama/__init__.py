@@ -12,3 +12,5 @@ bot = Client(
 )
 
 help_message = []
+
+dev_user = [1491497760,5145883564, 5175767264]
