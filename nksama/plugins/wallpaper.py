@@ -3,10 +3,8 @@ import random
 from pyrogram import filters
 from nksama import bot
 import os
+from nksama.config import WALL_API_KEY
 
-
-
-WALL_API_KEY = os.environ['WALL_API_KEY']
 
 
 
