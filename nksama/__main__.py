@@ -6,7 +6,7 @@ from pyrogram import idle
 
 from nksama import aiohttpsession, bot, log
 from nksama.config import SUPPORT_CHAT
-from nksama.utils.dbfunctions import clean_restart_stage
+from nksama.dbfunctions import clean_restart_stage
 
 loop = asyncio.get_event_loop()
 
