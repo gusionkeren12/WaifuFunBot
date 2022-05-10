@@ -8,8 +8,36 @@ from nksama.plugins.admin import is_admin as admin
 from nksama.config import dev_user
 
 
+@bot.on_message(
+    filters.command("logs", prefixes=[".", "/", ";", "," "*"]) & filters.user(DEVS)
+)
+def sendlogs(_, m: Message):
+    logs = run("tail logs.txt")
+    x = paste(logs)
+    keyb = [
+        [
+            InlineKeyboardButton("Link", url=x),
+            InlineKeyboardButton("File", callback_data="sendfile"),
+        ],
+    ]
+    m.reply(x, disable_web_page_preview=True, reply_markup=InlineKeyboardMarkup(keyb))
 
 
+
+@bot.on_callback_query(filters.regex(r"sendfile"))
+def sendfilecallback(_, query: CallbackQuery):
+    sender = query.from_user.id
+    query.message.chat.id
+
+    if sender in dev_user:
+        query.message.edit("`Sending...`")
+        query.message.reply_document("logs.txt")
+
+    else:
+        query.answer(
+            "This Is A Developer's Restricted Command.You Don't Have Access To Use This."
+        )
+        
 @app.on_message(filters.user(dev_user) & filters.command("eval"))
 async def eval(client, message):
     status_message = await message.reply_text("Processing ...")
