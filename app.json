@@ -1,17 +1,17 @@
 {
-    "name": "Komi-san Bot",
-    "description": "Telegram Group Management Bot Written In Python Using Pyrogram.",
-    "repository": "https://github.com/ctzfamily/komi-san",
-    "logo": "https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg",
+    "name": "WaifuFunBot",
+    "description": "Telegram Fun Bot Written In Python Using Pyrogram Made With 💙",
+    "repository": "https://github.com/ctzfamily/WaifuFunBot",
+    "logo": "https://telegra.ph//file/9fed197af5bf10b95c778.jpg",
     "keywords": [
     "python3",
     "telegram",
     "bot",
-    "youtube",
-    "telegram-bot",
+    "ctzfamily",
+    "fun-bot",
     "pyrogram"
     ],
-    "repository": "https://github.com/ctzfamily/komi-san",
+    "repository": "https://github.com/ctzfamily/WaifuFunBot",
     "stack": "container",
     "env": {
         "BOT_TOKEN": {
