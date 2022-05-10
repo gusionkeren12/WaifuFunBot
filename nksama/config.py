@@ -7,3 +7,5 @@ BOT_TOKEN = "5380977231:AAHhb9dBAeVm8wsDFk9YY1a_NT6sEiIePys"
 UPDATES_CHANNEL = "@PegaUpdates"
 SUPPORT_CHAT = "@PegaSupport"
 
+WALL_API_KEY "awoo"
+
