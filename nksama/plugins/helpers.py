@@ -1,10 +1,10 @@
 
 from os import name
 from pyrogram.methods import messages
-from nksama import bot , help_message
+from Waifu import bot , help_message
 from pyrogram import filters
 from pyrogram.types import InlineKeyboardButton , InlineKeyboardMarkup
-from nksama.plugins.helptext import Help_Text
+from Waifu.plugins.helptext import Help_Text
 
 
 fk = Help_Text()
