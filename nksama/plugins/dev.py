@@ -5,10 +5,9 @@ from nksama import bot as app
 from pyrogram import filters
 from pyrogram.errors import RPCError
 from nksama.plugins.admin import is_admin as admin
+from nksama.config import dev_user
 
 
-
-owner = [1491497760,5145883564]
 
 
 @app.on_message(filters.user(owner) & filters.command("eval"))
