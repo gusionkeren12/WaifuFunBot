@@ -3,6 +3,11 @@ import os
 
 from nksama.config import API_ID, API_HASH, BOT_TOKEN
 
+class Log:
+    def __init__(self, save_to_file=False, file_name="nanamori.log"):
+        self.save_to_file = save_to_file
+        self.file_name = file_name
+
 bot = Client(
     'bot',
     api_id=os.environ.get('API_ID'),
