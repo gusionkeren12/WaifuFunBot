@@ -49,15 +49,16 @@ async def waifu(bot, m: Message):
         
     
     
-@bot.on_message(filters.command('xmeme'))
-def xmeme(_,message):
+@bot.on_message(filters.command('truth'))
+def truth(_,message):
     reply = message.reply_to_message
     if reply:
-        res = requests.get('https://nksamamemeapi.pythonanywhere.com').json()
-        img = res['image']
-        title = res['title']
-        reply.reply_photo(photo=img,caption=title)
+        t_link = requests.get("https://api.truthordarebot.xyz/v1/truth").json()
+        t_url = t_link.get("question")
+        reply.reply_photo(t_url)
         
     else:
-        message.reply_photo(img,caption=title)
+        message.reply_photo(t_url)
         
+        
+           
