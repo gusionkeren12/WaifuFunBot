@@ -1,5 +1,7 @@
 from pyrogram import filters , Client
-import os , telegraph 
+import os 
+from telegraph import Telegraph
+
 
 from nksama.config import API_ID, API_HASH, BOT_TOKEN
 
