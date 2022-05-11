@@ -19,8 +19,6 @@ from nksama import bot
 
 @bot.on_message(filters.command('devlist'))
 def devlist(_,message):
-    reply = message.reply_to_message
-    if reply:
         x = dev_user
     for y in x:
         bot.send_message(
