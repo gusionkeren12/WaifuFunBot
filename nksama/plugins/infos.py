@@ -16,15 +16,18 @@ async def get_user_info(user, already=False):
     first_name = user.first_name
     mention = user.mention("Link")
     dc_id = user.dc_id
+    pic_count = get_user_profile_photos(user_id).total_count
     photo_id = user.photo.big_file_id if user.photo else None
     is_dev = user_id in dev_user
-    body = {
-        "• ID": user_id,
-        "• DC": dc_id,
-        "• Name": [first_name],
-        "• Username": [("@" + username) if username else "Null"],
-        "• Mention": [mention],
-        "• Devloper": is_dev,
+    body = { 
+        "╔═━「 Appraisal results: 」",
+        "✪ ID": user_id,
+        "✪ DC": dc_id,
+        "✪ Name": [first_name],
+        "✪ Username": [("@" + username) if username else "Null"],
+        "✪ Profile count": pic_count,
+        "✪ Mention": [mention],
+        "✪ Developer": is_dev,
     }
     caption = section("User info", body)
     return [caption, photo_id]
@@ -45,16 +48,16 @@ async def get_chat_info(chat, already=False):
     dc_id = chat.dc_id
     photo_id = chat.photo.big_file_id if chat.photo else None
     body = {
-        "➢ ID": chat_id,
-        "➢ DC": dc_id,
-        "➢ Type": type_,
-        "➢ Name": [title],
-        "➢ Username": [("@" + username) if username else "Null"],
-        "➢ Mention": [link],
-        "➢ Members": members,
-        "➢ Scam": is_scam,
-        "➢ Restricted": is_restricted,
-        "➢ Description": [description],
+        "✪ ID": chat_id,
+        "✪ DC": dc_id,
+        "✪ Type": type_,
+        "✪ Name": [title],
+        "✪ Username": [("@" + username) if username else "Null"],
+        "✪ Mention": [link],
+        "✪ Members": members,
+        "✪ Scam": is_scam,
+        "✪ Restricted": is_restricted,
+        "✪ Description": [description],
     }
     caption = section("Chat info", body)
     return [caption, photo_id]
@@ -69,7 +72,7 @@ async def info_func(_, message: Message):
     elif not message.reply_to_message and len(message.command) != 1:
         user = message.text.split(None, 1)[1]
 
-    m = await message.reply_text("Processing")
+    m = await message.reply_text("Information Processing...")
 
     try:
         info_caption, photo_id = await get_user_info(user)
@@ -98,7 +101,7 @@ async def chat_info_func(_, message: Message):
         elif len(message.command) == 2:
             chat = message.text.split(None, 1)[1]
 
-        m = await message.reply_text("Processing")
+        m = await message.reply_text("Chat info Processing...")
 
         info_caption, photo_id = await get_chat_info(chat)
         if not photo_id:
