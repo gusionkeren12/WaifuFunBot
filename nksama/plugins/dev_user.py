@@ -20,9 +20,8 @@ from nksama import bot
 @bot.on_message(filters.command('devlist'))
 def devlist(_,message):
         x = dev_user
-    for y in x:
-        bot.send_message(
-            message.chat.id, f"[{y}](tg://user?id={y})")
+        for y in x:
+      message.reply(f"[{y}](tg://user?id={y})")
         
 
 
