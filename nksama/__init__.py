@@ -6,13 +6,13 @@ StartTime = time.time()
 from nksama.config import API_ID, API_HASH, BOT_TOKEN
 
 
-bot = Client(
-    'bot',
-    api_id=os.environ.get('API_ID'),
-    api_hash=os.environ.get('API_HASH'),
-    bot_token=os.environ.get('BOT_TOKEN'),
-    plugins=dict(root=f"{__name__}/plugins")
-)
+
+API_ID = os.environ.get("API_ID", None)
+API_HASH = os.environ.get("API_HASH", None)
+BOT_TOKEN = os.environ.get("BOT_TOKEN", None)
+bot = Client("nksama", api_id=API_ID, api_hash=API_HASH, bot_token=BOT_TOKEN, plugins=dict(root="{}/plugins".format(__name__)))
+
+print("Nanamori is Working")
 
 help_message = []
 
