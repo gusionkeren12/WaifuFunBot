@@ -18,10 +18,13 @@ from nksama import bot as app
 from nksama import bot
 
 @bot.on_message(filters.command('devlist'))
-def devlist(_, m: Message):
-        x = dev_user
-        for y in x:
-    await m.reply_text(f"[{y}](tg://user?id={y})")
+async def devlist(_, m: Message):
+    for y in dev_user:
+        id = m.from_user.id
+        if id in dev_user:
+            await m.reply_text(f"[{y}](tg://user?id={y})")
+        else:
+            await m.reply_text("only Devs can access this command")
   
         
 
