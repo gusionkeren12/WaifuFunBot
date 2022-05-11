@@ -42,4 +42,3 @@ def watchorder(_,message):
     bot.send_message(message.chat.id , "**➢ Results For {}**".format(anime_) , reply_markup=InlineKeyboardMarkup(keyboard))
 
 
-help_message.append({"Module_Name": "extra"})
