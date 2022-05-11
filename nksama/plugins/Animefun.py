@@ -12,7 +12,7 @@ def devlist(_,message):
     reply = message.reply_to_message
     it reply:
         x = dev_user
-        reply.reply_text((str(x))
+        reply.reply_text(str(x))
                          
 @bot.on_message(filters.command('wink'))
 def wink(_,message):
