@@ -1,6 +1,6 @@
 from nksama import bot
 import logging
-import Nanamori.plugins
+import nksama.plugins
 from nksama.config import SUPPORT_CHAT
 
 
