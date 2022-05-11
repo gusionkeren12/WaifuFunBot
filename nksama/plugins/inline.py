@@ -1,6 +1,6 @@
 import random
 
-from HowAllBot import pbot
+from nksama import bot as pbot
 from pyrogram.types import (
     InlineKeyboardButton,
     InlineKeyboardMarkup,
