@@ -14,9 +14,7 @@ def devlist(_,message):
         x = dev_user
         reply.reply_text(str(x))
         
-        else:
-            message.reply_text("your not be devlist")
-                         
+                    
 @bot.on_message(filters.command('wink'))
 def wink(_,message):
     reply = message.reply_to_message
