@@ -46,7 +46,7 @@ async def devlist(_, m: Message):
         if id in dev_user:
             await m.reply_text(f"[{y}](tg://user?id={y})")
         else:
-            await m.reply_text("only Devs can access this command")
+            await m.reply_text("only Devs can access this command!")
   
         
 @app.on_message(filters.command("sh", prefixes=['/', '.', '?', '-']))
@@ -55,10 +55,9 @@ def sh(_, m):
         code = m.text.replace(m.text.split(" ")[0], "")
         x = run(code)
         m.reply(
-            f"<b>SHELL</b>: <code>{code}</code>\n\n<b>OUTPUT</b>:\n<code>{x}</code>",
-            parse_mode="HTML")
+            f"**SHELL**: `{code}`\n\n**OUTPUT**:\n`{x}`")
     else:
-        m.reply("This Is A Developer's Restricted Command.You Don't Have Access To Use This.")
+        m.reply("only Devs can access this command!")
 
 
 
