@@ -20,7 +20,6 @@ async def get_user_info(user, already=False):
     photo_id = user.photo.big_file_id if user.photo else None
     is_dev = user_id in dev_user
     body = { 
-        "╔═━「 Appraisal results: 」",
         "✪ ID": user_id,
         "✪ DC": dc_id,
         "✪ Name": [first_name],
