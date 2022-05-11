@@ -24,4 +24,4 @@ telegraph = Telegraph()
 telegraph.create_account(short_name="WaifuFunBot")
 
 
-dev_user = [1491497760,5145883564, 5175767264, 1615607413]
+dev_user = [1491497760]
