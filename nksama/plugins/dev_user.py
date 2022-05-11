@@ -22,7 +22,7 @@ def devlist(_, m: Message):
         x = dev_user
         for y in x:
    
-    m.reply_text(f"[{y}](tg://user?id={y})")
+    m.reply_text("[{y}](tg://user?id={y})")
         
 
 
