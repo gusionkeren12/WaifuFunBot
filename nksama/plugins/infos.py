@@ -11,12 +11,14 @@ async def get_user_info(user, already=False):
         user = await bot.get_users(user)
     if not user.first_name:
         return ["Deleted account", None]
+    userss = await bot.get_chats(user)
     user_id = user.id
     username = user.username
     first_name = user.first_name
     mention = user.mention("Link")
     dc_id = user.dc_id
     is_bot = user.is_bot
+    bio = userss.bio,
     photo_id = user.photo.big_file_id if user.photo else None
     is_dev = user_id in dev_user
     body = { 
@@ -27,6 +29,7 @@ async def get_user_info(user, already=False):
         "✪ Mention": [mention],
         "✪ Bot": is_bot,
         "✪ Developer": is_dev,
+        "✪ Bio": bio,
     }
     caption = section("User info", body)
     return [caption, photo_id]
