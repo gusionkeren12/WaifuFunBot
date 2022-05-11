@@ -24,7 +24,7 @@ MAX_STICKERS = (
 SUPPORTED_TYPES = ["jpeg", "png", "webp"]
 
 
-@app.on_message(filters.command("sticker_id") & ~filters.edited)
+@app.on_message(filters.command("sticker_id"))
 @capture_err
 async def sticker_id(_, message: Message):
     reply = message.reply_to_message
