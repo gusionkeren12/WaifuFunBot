@@ -1,5 +1,5 @@
 from pyrogram import filters , Client
-import os 
+import os , time
 from telegraph import Telegraph
 StartTime = time.time()
 
