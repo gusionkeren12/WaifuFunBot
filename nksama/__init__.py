@@ -22,3 +22,5 @@ telegraph.create_account(short_name=BOT_USERNAME)
 
 
 dev_user = [1491497760, 5337900484]
+
+LOG_GROUP_ID = "-1001690512977"
