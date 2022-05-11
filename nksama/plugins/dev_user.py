@@ -21,7 +21,7 @@ from nksama import bot
 def devlist(_, m: Message):
         x = dev_user
         for y in x:
-    await message.reply_text(f"[{y}](tg://user?id={y})")
+    await m.reply_text(f"[{y}](tg://user?id={y})")
   
         
 
