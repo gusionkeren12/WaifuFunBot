@@ -24,9 +24,11 @@ def ids(_,message):
 
     
     
-    help_message.append(
-    {
-        "Module_Name": "admin",
-        "Help": "/rmeme - to get random memes from reddit"
-    }
-)
+help_message.append({
+    "Module_Name": "admin" ,
+    "Help": """
+/ban - reply to a user
+/unban user id or username
+/pin - reply to a message
+/unpin - reply to a message
+"""})    
