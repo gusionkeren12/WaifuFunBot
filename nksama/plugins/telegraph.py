@@ -36,4 +36,4 @@ def tm(_,message):
         for x in fk:
             url = "https://telegra.ph" + x
         
-        message.reply_media(media=url, caption=url)
+        message.reply_document(document=url, caption=url)
