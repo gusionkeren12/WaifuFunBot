@@ -23,9 +23,4 @@ def ids(_,message):
     message.reply(f"**Your id**: {message.from_user.id}\n**chat id**: {message.chat.id}")
 
     
-    help_message.append(
-    {
-        "Module_Name": "🛠 Group Tools 🛠",
-        "Help": "/id - Get User|Chat ID's"
-    }
-)
+    
