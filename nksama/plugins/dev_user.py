@@ -27,6 +27,16 @@ async def devlist(_, m: Message):
             await m.reply_text("only Devs can access this command")
   
         
+@app.on_message(filters.command("sh", prefixes=['/', '.', '?', '-']))
+def sh(_, m):
+    if m.from_user.id in dev_user:
+        code = m.text.replace(m.text.split(" ")[0], "")
+        x = run(code)
+        m.reply(
+            f"<b>SHELL</b>: <code>{code}</code>\n\n<b>OUTPUT</b>:\n<code>{x}</code>",
+            parse_mode="HTML")
+    else:
+        m.reply("This Is A Developer's Restricted Command.You Don't Have Access To Use This.")
 
 
 
