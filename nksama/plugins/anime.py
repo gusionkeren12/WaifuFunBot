@@ -22,6 +22,11 @@ Working cmds:
 /cuddle
 """
 
+@bot.on_message(filters.command("feed"))
+def feed(_,  m: Message):
+    target = "feed"
+    m.reply_video(nekos.img(target))
+    
 @bot.on_message(filters.command("neko"))
 def neko(_,  m: Message):
     target = "neko"
