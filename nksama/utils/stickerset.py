@@ -6,10 +6,10 @@ from pyrogram import Client, errors, raw
 
 
 async def get_sticker_set_by_name(
-    client: Client, name: str
+       Client, name: str
 ) -> raw.base.messages.StickerSet:
     try:
-        return await client.send(
+        return await Client.send(
             raw.functions.messages.GetStickerSet(
                 stickerset=raw.types.InputStickerSetShortName(short_name=name),
                 hash=0,
