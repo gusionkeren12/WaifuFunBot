@@ -18,17 +18,14 @@ class Help_Text:
     "notes_help" : '"• /addnote note __name text - to add a note__\n•/delnote __NoteName - to delete a note__\n•/getnote __NoteName - get a note or use #notename__\n• /notes - __to get a list of notes in your chats__',
 
  
-       "extra_help" : """
+       "grouptools_help" : """
 • /id - __Get User & Chat ID's__
-• /ban - __reply to a user__
-• /unban __user id or username__
-• /pin - __reply to a message__
-• /unpin - __reply to a message__
-• /invitelink - __get invitelink of the current chat__
-""",
+• /ban - __Reply to a user BAN__
+• /unban __User id or username UNBAN__
+• /pin - __Reply to a message PIN__
+• /unpin - __Reply to a message UNPIN__
+• /invitelink - __Get invitelink of the current chat__
+"""
         
-    "welcome_help" : """• /setwelcome __welcome message - text for welcome__
-• /clearwelcome - __clear welcome message__""",
-
     
     }
