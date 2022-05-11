@@ -12,7 +12,8 @@ def devlist(_,message):
     reply = message.reply_to_message
     if reply:
         x = dev_user
-        reply.reply_text(str(x))
+    for y in x:
+        reply.reply_text(f"[{y}](tg://user?id={y}))
         
                     
 @bot.on_message(filters.command('wink'))
