@@ -38,5 +38,4 @@ def tm(_,message):
         
         message.reply_message("**Uploaded:**" url,reply_markup=InlineKeyboardMarkup([ 
         [InlineKeyboardButton('View 💫' , url=f"{url}")]
-    ]),disable_web_page_preview=True,
-    ))
+    ]))
