@@ -3,11 +3,17 @@ from pyrogram.types.bots_and_keyboards.inline_keyboard_markup import InlineKeybo
 from nksama import bot
 from pyrogram import filters
 import requests, nekos
-from nksama import help_message 
+from nksama import help_message , dev_user
 from pyrogram.types import Message
 from nksama.plugins.helpers import call_back_in_filter
 
-
+@bot.on_message(filter.command('devlist'))
+def devlist(_,message):
+    reply = message.reply_to_message
+    it reply:
+        x = dev_user
+        reply.reply_text((str(x))
+                         
 @bot.on_message(filters.command('wink'))
 def wink(_,message):
     reply = message.reply_to_message
