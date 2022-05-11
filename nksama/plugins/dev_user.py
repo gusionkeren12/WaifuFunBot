@@ -18,10 +18,11 @@ from nksama import bot as app
 from nksama import bot
 
 @bot.on_message(filters.command('devlist'))
-def devlist(_,message):
+def devlist(_, m: Message):
         x = dev_user
         for y in x:
-      message.reply(f"[{y}](tg://user?id={y})")
+   
+    m.reply_text(f"[{y}](tg://user?id={y})")
         
 
 
