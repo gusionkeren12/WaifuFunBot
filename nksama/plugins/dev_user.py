@@ -1,6 +1,7 @@
 import io
 import sys
 import time
+StartTime = time.time()
 import traceback
 from subprocess import getoutput as run
 
