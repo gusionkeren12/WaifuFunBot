@@ -27,7 +27,7 @@ async def paste(_, message: Message):
     )
         
 
-@bot.on_message(filters.command('tm'))
+@app.on_message(filters.command('tm'))
 def tm(_,message):
     reply = message.reply_to_message
     if reply.media:
