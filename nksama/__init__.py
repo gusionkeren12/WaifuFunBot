@@ -1,14 +1,10 @@
 from pyrogram import filters , Client
 import os 
 from telegraph import Telegraph
-
+StartTime = time.time()
 
 from nksama.config import API_ID, API_HASH, BOT_TOKEN
 
-class Log:
-    def __init__(self, save_to_file=False, file_name="nanamori.log"):
-        self.save_to_file = save_to_file
-        self.file_name = file_name
 
 bot = Client(
     'bot',
