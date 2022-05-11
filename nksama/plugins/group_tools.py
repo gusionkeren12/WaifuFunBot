@@ -24,3 +24,5 @@ def ids(_,message):
 
     
     
+    help_message.append({"Module_Name": "grouptools"})
+    
