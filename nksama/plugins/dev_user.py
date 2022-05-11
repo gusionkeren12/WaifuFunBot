@@ -23,11 +23,9 @@ def devlist(_,message):
     if reply:
         x = dev_user
     for y in x:
-        reply.reply_text(f"[{y}](tg://user?id={y})")
+        await bot.send_text(message.chat.id, f"[{y}](tg://user?id={y})")
         
-     else:
-         message.reply_text(f"[{y}](tg://user?id={y})")
-     
+
 
 
 def paste(text):
