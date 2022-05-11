@@ -36,6 +36,6 @@ def tm(_,message):
         for x in fk:
             url = "https://telegra.ph" + x
         
-        message.reply_message("**Uploaded:**" url,reply_markup=InlineKeyboardMarkup([ 
+        message.reply_message("**Uploaded:**", url,reply_markup=InlineKeyboardMarkup([ 
         [InlineKeyboardButton('View 💫' , url=f"{url}")]
     ]))
