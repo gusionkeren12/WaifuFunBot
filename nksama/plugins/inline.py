@@ -1,6 +1,6 @@
 import random
 
-from nksama import bot as pbot
+from nksama import bot , SUPPORT_CHAT, UPDATES_CHANNEL
 from pyrogram.types import (
     InlineKeyboardButton,
     InlineKeyboardMarkup,
@@ -18,7 +18,7 @@ text = """
 
 
 
-@pbot.on_inline_query()
+@bot.on_inline_query()
 async def inline_query_handler(client, query):
     string = query.query.lower()
     if string == "":
