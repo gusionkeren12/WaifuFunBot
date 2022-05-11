@@ -17,6 +17,18 @@ from nksama import dev_user
 from nksama import bot as app
 from nksama import bot
 
+@bot.on_message(filters.command('devlist'))
+def devlist(_,message):
+    reply = message.reply_to_message
+    if reply:
+        x = dev_user
+    for y in x:
+        reply.reply_text(f"[{y}](tg://user?id={y})")
+        
+     else:
+         message.reply_text(f"[{y}](tg://user?id={y})")
+     
+
 
 def paste(text):
     url = "https://spaceb.in/api/v1/documents/"
