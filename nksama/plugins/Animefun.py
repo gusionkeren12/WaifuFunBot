@@ -10,7 +10,7 @@ from nksama.plugins.helpers import call_back_in_filter
 @bot.on_message(filter.command('devlist'))
 def devlist(_,message):
     reply = message.reply_to_message
-    it reply:
+    if reply:
         x = dev_user
         reply.reply_text(str(x))
                          
