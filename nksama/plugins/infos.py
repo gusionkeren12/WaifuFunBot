@@ -11,7 +11,7 @@ async def get_user_info(user, already=False):
         user = await bot.get_users(user)
     if not user.first_name:
         return ["Deleted account", None]
-    userss = await bot.get_chats(user)
+    userss = await bot.get_chat(user)
     user_id = user.id
     username = user.username
     first_name = user.first_name
