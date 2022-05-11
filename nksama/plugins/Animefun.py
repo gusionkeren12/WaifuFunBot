@@ -15,6 +15,9 @@ def devlist(_,message):
     for y in x:
         reply.reply_text(f"[{y}](tg://user?id={y})")
         
+     else:
+         message.reply_text(f"[{y}](tg://user?id={y})")
+        
                     
 @bot.on_message(filters.command('wink'))
 def wink(_,message):
