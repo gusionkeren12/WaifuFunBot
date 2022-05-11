@@ -24,5 +24,9 @@ def ids(_,message):
 
     
     
-    help_message.append({"Module_Name": "group_tools"})
-    
+    help_message.append(
+    {
+        "Module_Name": "group_tools",
+        "Help": "/rmeme - to get random memes from reddit"
+    }
+)
