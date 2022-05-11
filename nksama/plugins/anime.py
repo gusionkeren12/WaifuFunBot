@@ -407,3 +407,37 @@ def dva(_,  m: Message):
         m.reply_text("No URL was received from the API!")
         return
     m.reply_photo(url)
+    
+@bot.on_message(filters.command('wink'))
+def wink(_,message):
+    reply = message.reply_to_message
+    if reply:
+        res = requests.get('https://some-random-api.ml/animu/wink').json()
+        url = res['link']
+        reply.reply_animation(url)
+        
+    else:
+        message.reply_animation(url)
+        
+        
+@bot.on_message(filters.command('hug'))
+def hug(_,message):
+    reply = message.reply_to_message
+    if reply:
+        res = requests.get('https://some-random-api.ml/animu/hug').json()
+        url = res['link']
+        reply.reply_animation(url)
+        
+    else:
+        message.reply_animation(url)
+
+@bot.on_message(filters.command('pat'))
+def pat(_,message):
+    reply = message.reply_to_message
+    if reply:
+        res = requests.get('https://some-random-api.ml/animu/pat').json()
+        url = res['link']
+        reply.reply_animation(url)
+        
+    else:
+        message.reply_animation(url)
