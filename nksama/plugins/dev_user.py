@@ -160,3 +160,12 @@ async def invitelink(client, message):
     except Exception as e:
         pass
 
+    
+@app.on_message(filters.command("ping", prefixes=['/', '.', '?', '-']))
+async def ping(_, m):
+    start_time = time.time()
+    text = await m.reply_text("Pinging...")
+    end_time = time.time()
+    ping_time = round((end_time - start_time) * 1000, 3)
+    uptime = get_readable_time((time.time() - StartTime))
+    await text.edit_text(f"**🏓 PONG!!:** `{ping_time} ms`\n**🆙 UPTIME:** `{uptime}`", parse_mode='markdown')
