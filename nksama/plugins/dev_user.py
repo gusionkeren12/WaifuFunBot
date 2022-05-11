@@ -23,7 +23,7 @@ def devlist(_,message):
     if reply:
         x = dev_user
     for y in x:
-        await bot.send_text(message.chat.id, f"[{y}](tg://user?id={y})")
+        await bot.send_message(message.chat.id, f"[{y}](tg://user?id={y})")
         
 
 
