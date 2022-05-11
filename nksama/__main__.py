@@ -1,6 +1,6 @@
 from nksama import bot
-import asyncio
 import logging
+import Nanamori.plugins
 from nksama.config import SUPPORT_CHAT
 
 
@@ -15,5 +15,4 @@ logging.basicConfig(
 if __name__ == "__main__":
     bot.run()
     
-    bot.send_message(f"{SUPPORT_CHAT}" , "@WaifuFunBot Alive!")
     
