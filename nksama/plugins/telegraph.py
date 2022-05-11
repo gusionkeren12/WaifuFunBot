@@ -6,7 +6,7 @@ from nksama import bot as app, telegraph
 from telegraph import upload_file
 
 
-@app.on_message(filters.command("telegraph"))
+@app.on_message(filters.command("txt"))
 async def paste(_, message: Message):
     reply = message.reply_to_message
 
@@ -14,7 +14,7 @@ async def paste(_, message: Message):
         return await message.reply("Reply to a text message")
 
     if len(message.command) < 2:
-        return await message.reply("**Usage:**\n /telegraph [Page name]")
+        return await message.reply("**Usage:**\n /txt [Page name]")
 
     page_name = message.text.split(None, 1)[1]
     page = telegraph.create_page(
@@ -36,4 +36,4 @@ def tm(_,message):
         for x in fk:
             url = "https://telegra.ph" + x
         
-        message.reply_text(url)
+        message.reply_media(media=url, caption=url)
