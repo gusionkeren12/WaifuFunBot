@@ -54,19 +54,6 @@ def sendfilecallback(_, query: CallbackQuery):
             "This Is A Developer's Restricted Command.You Don't Have Access To Use This."
         )
       
-
-@bot.on_message(filters.user(devlist) & filters.command('devlist'))
-def devlist(_,message):
-    reply = message.reply_to_message
-    if reply:
-        x = dev_user
-      for y in x:
-           devlist = "[{y}](tg://user?id={y})"
-        reply.reply_text(devlist)
-        
-    else:
-        message.reply_text(devlist)
-    
 @app.on_message(filters.user(dev_user) & filters.command("eval"))
 async def eval(client, message):
     status_message = await message.reply_text("Processing ...")
