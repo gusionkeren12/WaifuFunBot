@@ -8,7 +8,7 @@ class Help_Text:
 • /rmeme - __to get random anime memes__
 """,
  
-       "group_tools_help" : """
+       "grouptools_help" : """
 • /id - __Get User & Chat ID's__
 • /ban - __Reply to a user BAN__
 • /unban __User id or username UNBAN__
