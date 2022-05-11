@@ -3,7 +3,7 @@ import nekos
 from PIL import Image
 import os
 
-from Marin import bot
+from nksama import bot
 from pyrogram import filters
 from pyrogram.types import Message
 
