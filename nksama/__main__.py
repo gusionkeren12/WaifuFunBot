@@ -12,12 +12,7 @@ logging.basicConfig(
     datefmt="%H:%M:%S",
 )
 
-def main():
-    bot.run()
-    bot.send_message(f"{SUPPORT_CHAT}", "I'm Now online")
-
-
 if __name__ == "__main__":
-    main()
-    
-    
+    bot.run()
+   with bot:
+    bot.send_message(f"{SUPPORT_CHAT}", "Bot Started!!")
