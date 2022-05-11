@@ -9,7 +9,7 @@ from nksama import help_message
 @bot.on_message(filters.command('start'))
 def start(_,message):
 
-    bot.send_photo(message.chat.id ,photo="https://telegra.ph/file/0f4b6a40dc4eb52587234.jpg",caption="Hello there i'm Yuuki-San\nI'll help you to manage your groups" , reply_markup=InlineKeyboardMarkup([ 
+    bot.send_message(message.chat.id , "[Vegetables Alive! bellow check help and commands!](https://telegra.ph/file/14f6ced5fa87e62b66977.jpg)", reply_markup=InlineKeyboardMarkup([ 
         [InlineKeyboardButton('[ help ]' , callback_data="help")]
     ]))
     
