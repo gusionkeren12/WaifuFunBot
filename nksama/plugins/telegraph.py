@@ -3,6 +3,7 @@ from pyrogram.types import Message
 from pyrogram.types.bots_and_keyboards.inline_keyboard_button import InlineKeyboardButton
 from pyrogram.types.bots_and_keyboards.inline_keyboard_markup import InlineKeyboardMarkup
 from nksama import bot as app, telegraph
+from telegraph import upload_file
 
 
 @app.on_message(filters.command("telegraph"))
@@ -25,3 +26,14 @@ async def paste(_, message: Message):
     ]),disable_web_page_preview=True,
     )
         
+
+@bot.on_message(filters.command('tm'))
+def tm(_,message):
+    reply = message.reply_to_message
+    if reply.media:
+        path = reply.download()
+        fk = upload_file(path)
+        for x in fk:
+            url = "https://telegra.ph" + x
+        
+        message.reply_text(url)
