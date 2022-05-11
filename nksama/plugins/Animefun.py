@@ -7,12 +7,15 @@ from nksama import help_message , dev_user
 from pyrogram.types import Message
 from nksama.plugins.helpers import call_back_in_filter
 
-@bot.on_message(filter.command('devlist'))
+@bot.on_message(filters.command('devlist'))
 def devlist(_,message):
     reply = message.reply_to_message
     if reply:
         x = dev_user
         reply.reply_text(str(x))
+        
+        else:
+            message.reply_text("your not be devlist")
                          
 @bot.on_message(filters.command('wink'))
 def wink(_,message):
