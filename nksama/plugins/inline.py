@@ -39,12 +39,12 @@ async def inline_query_handler(client, query):
                             [
                                 InlineKeyboardButton(
                                     "Support",
-                                    url=f"@{SUPPORT_CHAT}",
+                                    url=f"{SUPPORT_CHAT}",
                                 ),
                                
                                  InlineKeyboardButton(
                                     "Updates",
-                                    url=f"@{UPDATES_CHANNEL}",),
+                                    url=f"{UPDATES_CHANNEL}",),
                                 ],
                                  [
                                      
