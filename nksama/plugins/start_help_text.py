@@ -7,6 +7,14 @@ from nksama import bot
 
 BOT_IMG = [ "https://telegra.ph/file/b3fbf990e0b67ede241a3.jpg",
            "https://telegra.ph/file/94865dae2576a2fa52732.jpg" ]
+text = """
+Hello! Dear {}
+
+I'm An Anime themed Smart VegetaRobot make your group's joyful bellow Using /help commands!!
+
+Powerd by @PegaBots
+"""
+
 
 @bot.on_message(filters.command(["start"], ["/", ".", "?"]))
 async def start(bot, m: Message):
