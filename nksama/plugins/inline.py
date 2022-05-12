@@ -1,4 +1,5 @@
 import random
+from nksama.plugins.dev_user import *
 
 from nksama import bot , SUPPORT_CHAT, UPDATES_CHANNEL
 from pyrogram.types import (
@@ -13,8 +14,8 @@ text = """
 Hello! {}
 I'm An Anime themed Smart VegetaRobot make your group's joyful bellow Using /help commands!!
 
+✪ Server time : {}
 ✪ Uptime: {}
-✪ Pyrogram: {}
 
 Powerd by @PegaBots
 
@@ -32,7 +33,7 @@ async def inline_query_handler(client, query):
             results=[
                InlineQueryResultArticle(
                     input_message_content=InputTextMessageContent(
-                        text, disable_web_page_preview=True
+                        text,formate(ping_time, uptime) disable_web_page_preview=True
                     ),
                     thumb_url="https://telegra.ph/file/32075ee5edfd88e99f6c3.jpg",
                     title=f"🤝 Help",
