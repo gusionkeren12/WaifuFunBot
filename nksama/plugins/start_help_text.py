@@ -1,5 +1,8 @@
-
-
+from pyrogram import filters
+from pyrogram.types import Message
+from pyrogram.types.bots_and_keyboards.inline_keyboard_button import InlineKeyboardButton
+from pyrogram.types.bots_and_keyboards.inline_keyboard_markup import InlineKeyboardMarkup
+from nksama import bot
 
 
 
@@ -8,15 +11,15 @@ async def start(bot, m: Message):
     buttons = [
         [
             InlineKeyboardButton(
-                "Share any thing! 🤝", switch_inline_query_current_chat=""
+                "ADD ME", switch_inline_query_current_chat=""
             ),
             InlineKeyboardButton(
-                "Repo 🏁", url="https://github.com/Team-Aasf/How-All-Bot"
+                "Support", url=f"{SUPPORT_CHAT}"
             ),
         ]
     ]
     await m.reply_photo(
-        random.choice(BOT),
+        random.choice(BOT_IMG),
         caption=text.format(m.from_user.first_name),
         reply_markup=InlineKeyboardMarkup(buttons),
     )
