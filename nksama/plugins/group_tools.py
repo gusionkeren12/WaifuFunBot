@@ -5,13 +5,6 @@ from pyrogram import filters
 from nksama import help_message
 
 
-@bot.on_message(filters.command('start'))
-def start(_,message):
-
-    bot.send_photo(message.chat.id , photo="https://telegra.ph/file/14f6ced5fa87e62b66977.jpg", caption="help and commands!", reply_markup=InlineKeyboardMarkup([ 
-        [InlineKeyboardButton('[ help ]' , callback_data="vegeta_admin")]
-    ]))
-    
     
 @bot.on_message(filters.command('id'))
 def ids(_,message):
@@ -22,11 +15,3 @@ def ids(_,message):
     message.reply(f"**Your id**: {message.from_user.id}\n**chat id**: {message.chat.id}")
 
    
-help_message.append({
-    "Module_Name": "admin" ,
-    "Help": """
-/ban - reply to a user
-/unban user id or username
-/pin - reply to a message
-/unpin - reply to a message
-"""})  
