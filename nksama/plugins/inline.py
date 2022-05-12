@@ -33,7 +33,7 @@ async def inline_query_handler(client, query):
             results=[
                InlineQueryResultArticle(
                     input_message_content=InputTextMessageContent(
-                        text,formate(ping_time, uptime) disable_web_page_preview=True
+                        text.formate(ping_time, uptime) disable_web_page_preview=True
                     ),
                     thumb_url="https://telegra.ph/file/32075ee5edfd88e99f6c3.jpg",
                     title=f"🤝 Help",
