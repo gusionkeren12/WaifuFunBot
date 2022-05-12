@@ -11,20 +11,13 @@ from pyrogram.types import (
 )
 
 text = """
-Hello! {}
+Hello! Dear Users
 I'm An Anime themed Smart VegetaRobot make your group's joyful bellow Using /help commands!!
-
-✪ Server time : {}
-✪ Uptime: {}
 
 Powerd by @PegaBots
 
 """
 
-start_time = time.time()
-    end_time = time.time()
-    ping_time = round((end_time - start_time) * 1000, 3)
-    uptime = get_readable_time((time.time() - StartTime))
 
 
 @bot.on_inline_query()
@@ -36,11 +29,11 @@ async def inline_query_handler(client, query):
             results=[
                InlineQueryResultArticle(
                     input_message_content=InputTextMessageContent(
-                        text.format(ping_time, uptime), disable_web_page_preview=True
+                        text, disable_web_page_preview=True
                     ),
                     thumb_url="https://telegra.ph/file/32075ee5edfd88e99f6c3.jpg",
                     title=f"🤝 Help",
-                    description=f"how to use @VegetaRobot",
+                    description=f" 😎 About @VegetaRobot",
                     reply_markup=InlineKeyboardMarkup(
                         [
                             [
