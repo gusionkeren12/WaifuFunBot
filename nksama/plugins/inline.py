@@ -21,7 +21,10 @@ Powerd by @PegaBots
 
 """
 
-
+start_time = time.time()
+    end_time = time.time()
+    ping_time = round((end_time - start_time) * 1000, 3)
+    uptime = get_readable_time((time.time() - StartTime))
 
 
 @bot.on_inline_query()
