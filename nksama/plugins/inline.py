@@ -10,9 +10,14 @@ from pyrogram.types import (
 )
 
 text = """
-<b> Information Of bot: </b> /n <b> @VegetaRobot Is A Groupmanager Anime Themed Bot</b>
-<b>💬 Bot commands list you want to see send Bot pm `/start` then it will send 🛠 grouptools, 💕 anime buttons [click to read] telegraph method!! </b>
-<b> created by @ctzfamily 💫 </b>
+Hello! {}
+I'm An Anime themed Smart VegetaRobot make your group's joyful bellow Using /help commands!!
+
+✪ Uptime: {}
+✪ Pyrogram: {}
+
+Powerd by @PegaBots
+
 """
 
 
