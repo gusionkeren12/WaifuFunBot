@@ -41,10 +41,10 @@ def get_readable_time(seconds: int) -> str:
 
 @bot.on_message(filters.command('devlist'))
 async def devlist(_, m: Message):
-    for y in dev_user:
+       DEV = list(dev_user)
         id = m.from_user.id
         if id in dev_user:
-            await m.reply_text(f"[{y}](tg://user?id={y})")
+            await m.reply_text(f"{DEV}\n")
         else:
             await m.reply_text("only Devs can access this command!")
   
