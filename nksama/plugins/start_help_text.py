@@ -10,8 +10,8 @@ BOT_IMG = [ "https://telegra.ph/file/b3fbf990e0b67ede241a3.jpg",
 text = """
 Hello! Dear {}
 
-I'm An Anime themed Smart VegetaRobot make your group's joyful
-bellow Using /help commands!!
+I'm An Anime themed Smart VegetaRobot make your group's
+joyful Using /help commands!!
 
 powered by @PegaBots
 """
@@ -46,4 +46,14 @@ here my help and commands list!
 async def start(_, m: Message):
    
        await m.reply_text(HELP_TEXT.format(m.from_user.mention))
+           
+  
+ANIME_TEXT = """
+
+hello! Dear {}
+
+here the anime help & commads
+
+• /neko - 
+"""
            
