@@ -17,7 +17,7 @@ Powerd by @PegaBots
 
 
 @bot.on_message(filters.command(["start"], ["/", ".", "?"]))
-async def start(bot, m: Message):
+async def start(_, m: Message):
     buttons = [
         [
             InlineKeyboardButton(
