@@ -10,9 +10,10 @@ BOT_IMG = [ "https://telegra.ph/file/b3fbf990e0b67ede241a3.jpg",
 text = """
 Hello! Dear {}
 
-I'm An Anime themed Smart VegetaRobot make your group's joyful bellow Using /help commands!!
+I'm An Anime themed Smart VegetaRobot make your group's joyful
+bellow Using /help commands!!
 
-Powerd by @PegaBots
+powered by @PegaBots
 """
 
 
@@ -27,6 +28,22 @@ async def start(_, m: Message):
 
     await m.reply_photo(
         random.choice(BOT_IMG),
-        caption=text.format(m.from_user.first_name),
+        caption=text.format(m.from_user.mention),
         reply_markup=InlineKeyboardMarkup(buttons),
     )
+
+          
+HELP_TEXT = """
+Hello! Dear {}
+
+here my help and commands list! 
+
+• /animehelp - for my anime commands list!
+• /devhelp - for my developer commands list! 
+"""
+         
+@bot.on_message(filters.command(["help"], ["/", ".", "?"]))
+async def start(_, m: Message):
+   
+       await m.reply_text(HELP_TEXT.format(m.from_user.mention))
+           
