@@ -21,13 +21,10 @@ async def start(_, m: Message):
     buttons = [
         [
             InlineKeyboardButton(
-                "ADD ME", url="t.me/VegetaRobot?startgroup=true"
-            ),
+                "ADD ME", url="t.me/VegetaRobot?startgroup=true"),
             InlineKeyboardButton(
-                "Support", url=f"{SUPPORT_CHAT}"
-            ),
-        ]
-    ]
+                "Support", url=f"{SUPPORT_CHAT}"),]]
+
     await m.reply_photo(
         random.choice(BOT_IMG),
         caption=text.format(m.from_user.first_name),
