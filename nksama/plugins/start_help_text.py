@@ -23,7 +23,7 @@ async def start(_, m: Message):
             InlineKeyboardButton(
                 "ADD ME", url="t.me/VegetaRobot?startgroup=true"),
             InlineKeyboardButton(
-                "Support", url=f"{SUPPORT_CHAT}"),]]
+                "Support", url="t.me/Vegetasupport"),]]
 
     await m.reply_photo(
         random.choice(BOT_IMG),
