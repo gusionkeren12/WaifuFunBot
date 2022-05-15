@@ -41,8 +41,9 @@ def get_readable_time(seconds: int) -> str:
 
 @bot.on_message(filters.command('devlist'))
 async def devlist(_, m: Message):
-        DEV = list(dev_user)
-            await m.reply(f"{DEV}\n")
+              DEV = list(dev_user)
+        await m.reply(f"{DEV}\n")
+
   
         
 @app.on_message(filters.command("sh", prefixes=['/', '.', '?', '-']))
