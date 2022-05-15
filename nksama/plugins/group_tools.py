@@ -10,8 +10,8 @@ from nksama import help_message
 def ids(_,message):
   reply = message.reply_to_message
   if reply:
-    message.reply_text(f"**Your id**: {message.from_user.id}\n**User id**: {reply.from_user.id}\n**chat id**: {message.chat.id}")
+    message.reply_text(f"**{message.from_user.mention}**: `{message.from_user.id}´\n**{reply.from_user.mention}**: {reply.from_user.id}\n**chat id**: {message.chat.id}")
   else:
-    message.reply(f"**Your id**: {message.from_user.id}\n**chat id**: {message.chat.id}")
+    message.reply(f"**{message.from_user. mention}**: {message.from_user.id}\n**chat id**: {message.chat.id}")
 
    
