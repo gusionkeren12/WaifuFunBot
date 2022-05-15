@@ -2,7 +2,7 @@ from nksama import bot
 from pyrogram import filters
 
 
-@bot.on_message(filters.text & filters.chat(-1001544622735))
+@bot.on_message(filters.text & filters.chat("@unitedsupport"))
 def nevermind(_,message):
-  if message.from_user.id == 2080460107 and "completed" in message.text:
+  if message.from_user.id == 1491497760 and "completed" in message.text:
     message.delete()
