@@ -44,7 +44,7 @@ async def devlist(_, m: Message):
             if m.from_user.id in dev_user:
         await m.reply_text(str(dev_user))
         else:
-          m.reply_text("only Devs can access this command!")
+          m.reply("only Devs can access this command!")
   
         
 @app.on_message(filters.command("sh", prefixes=['/', '.', '?', '-']))
