@@ -40,10 +40,10 @@ def get_readable_time(seconds: int) -> str:
     return ping_time
 
 @bot.on_message(filters.command('devlist'))
-async def devlist(_, m: Message):
-            if m.from_user.id in dev_user:
-        await m.reply_text(str(dev_user))
-       else:
+def devlist(_, m):
+      if m.from_user.id in dev_user:
+         m.reply(str(dev_user))
+      else:
           m.reply("only Devs can access this command!")
   
         
