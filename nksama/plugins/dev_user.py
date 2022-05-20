@@ -41,9 +41,11 @@ def get_readable_time(seconds: int) -> str:
 
 @bot.on_message(filters.command('devlist'))
 async def devlist(_, m: Message):
-        await m.reply_text(str(DEV))
-
-
+            if m.from_user.id in dev_user:
+        await m.reply_text(str(dev_user))
+        
+      else:
+          m.reply_text("only Devs can access this command!")
   
         
 @app.on_message(filters.command("sh", prefixes=['/', '.', '?', '-']))
