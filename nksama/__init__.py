@@ -6,6 +6,7 @@ StartTime = time.time()
 from nksama.config import *
 
 #edit yourself nksama/config.py
+OWNER_ID = OWNER_ID
 LOG_GROUP_ID = LOG_GROUP_ID
 BOT_USERNAME = BOT_USERNAME
 SUPPORT_CHAT = SUPPORT_CHAT
@@ -28,5 +29,5 @@ telegraph = Telegraph()
 telegraph.create_account(short_name=BOT_USERNAME)
 
 
-dev_user = [1491497760, 5337900484]
+dev_user = [1491497760]
 
