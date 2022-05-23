@@ -28,9 +28,9 @@ async def inline_query_handler(client, query):
             results=[
                InlineQueryResultPhoto(
                     input_message_content=InputTextMessageContent(
-                     caption=text, 
-                  ),
                     photo_url="https://telegra.ph/file/c9c62179fef22450bb342.jpg",
+                    caption=text, 
+                  ),
                     thumb_url="https://telegra.ph/file/c9c62179fef22450bb342.jpg",
                     title=f"🤝 Help",
                     description=f" 😎 About @VegetaRobot",
