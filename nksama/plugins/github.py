@@ -4,7 +4,7 @@ from pyrogram import filters
 from nksama import bot
 
 
-@bot.on_message(filters.command("github","git"))
+@bot.on_message(filters.command('github', 'git'))
 def git(_, message):
     user = message.text.split(' ')[1]
     res = get(f'https://api.github.com/users/{user}').json()
