@@ -23,5 +23,5 @@ def git(_, message):
         f.write(kek)
 
     message.reply_photo(f"{user}.jpg", caption=data)
-   os.remove(f"{user}.jpg")
+    os.remove(f"{user}.jpg")
      
