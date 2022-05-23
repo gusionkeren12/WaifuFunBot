@@ -147,7 +147,8 @@ async def meme(_,message):
 	r = requests.get('https://nksamamemeapi.pythonanywhere.com').json()
 	pic = r['image']
 	title = r['title']
-      bot.send_photo(
+     
+    await bot.send_photo(
 	      message.chat.id , pic , caption=title)
 
 
@@ -156,5 +157,6 @@ async def hmeme(_,message):
 	r = requests.get('https://nksamamemeapi.pythonanywhere.com/get/hentaimemes').json()
 	pic = r['image']
 	title = r['title']
-        bot.send_photo(
+      
+     await bot.send_photo(
 		message.chat.id , pic , caption=title)
