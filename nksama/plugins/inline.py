@@ -27,10 +27,10 @@ async def inline_query_handler(client, query):
             query.id,
             results=[
                InlineQueryResultPhoto(
-                    photo_url = "https://telegra.ph/file/c9c62179fef22450bb342.jpg",
-                    thumb_url = "https://telegra.ph/file/c9c62179fef22450bb342.jpg",
                     input_message_content=InputTextMessageContent(
-                        text, disable_web_page_preview=True
+                       thumb_url = "https://telegra.ph/file/c9c62179fef22450bb342.jpg", 
+                       photo_url = "https://telegra.ph/file/c9c62179fef22450bb342.jpg",
+                    caption=text, disable_web_page_preview=True
                     ),
                     thumb_url="https://telegra.ph/file/32075ee5edfd88e99f6c3.jpg",
                     title=f"🤝 Help",
