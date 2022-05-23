@@ -150,10 +150,10 @@ def meme(_,message):
         r = requests.get('https://nksamamemeapi.pythonanywhere.com').json()
         pic = r['image']
         title = r['title']
-        reply.reply_photo(pic,caption=title)
+        reply.reply_photo(photo=pic,caption=title)
         
     else:
-        message.reply_photo(pic,caption=title)
+        message.reply_photo(photo=pic,caption=title)
 	
 	
 @bot.on_message(filters.command('hmeme'))
@@ -163,9 +163,9 @@ def hmeme(_,message):
         r = requests.get('https://nksamamemeapi.pythonanywhere.com/get/hentaimemes').json()
         pic = r['image']
         title = r['title']
-        reply.reply_photo(pic,caption=title)
+        reply.reply_photo(photo=pic,caption=title)
         
     else:
-        message.reply_photo(pic,caption=title)
+        message.reply_photo(photo=pic,caption=title)
 	
 	
