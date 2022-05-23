@@ -169,7 +169,7 @@ def meme(_,message):
 def hmeme(_,message):
     reply = message.reply_to_message
     if reply:
-        r = requests.get('').json()
+        r = requests.get('https://nksamamemeapi.pythonanywhere.com/get/hentaimemes').json()
         pic = r['image']
         title = r['title']
         reply.reply_photo(pic,caption=title)
