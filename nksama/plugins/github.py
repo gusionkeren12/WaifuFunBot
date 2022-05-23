@@ -23,7 +23,8 @@ def git(_, message):
         f.write(kek)
 
     message.reply_photo(f"{user}.jpg", caption=data)
-    os.remove(f"{user}.jpg")
-     
-      else:
+    
+     else:
           message.reply_text("usage: /github ctzfamily")
+   os.remove(f"{user}.jpg")
+     
