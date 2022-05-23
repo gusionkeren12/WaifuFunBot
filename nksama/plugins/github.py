@@ -5,7 +5,7 @@ from nksama import bot
 
 
 @bot.on_message(filters.command('github'))
-def git(_, message, m):
+def git(_, message):
     user = message.text.split(' ')[1]
     res = get(f'https://api.github.com/users/{user}').json()
     data = f"""**Name**: {res['name']}
@@ -23,8 +23,5 @@ def git(_, message, m):
         f.write(kek)
 
     message.reply_photo(f"{user}.jpg", caption=data)
-    
-      else:
-          m.reply_text("usage: /github ctzfamily")
    os.remove(f"{user}.jpg")
      
