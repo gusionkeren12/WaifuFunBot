@@ -1,5 +1,4 @@
 import random
-from nksama.plugins.dev_user import *
 
 from nksama import bot , SUPPORT_CHAT, UPDATES_CHANNEL
 from pyrogram.types import (
