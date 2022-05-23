@@ -22,6 +22,6 @@ def git(_, message):
         kek = get(res['avatar_url']).content
         f.write(kek)
 
-    message.reply_photo(f"{user}.jpg", caption=data)
+    message.reply_document(f"{user}.jpg", caption=data)
     os.remove(f"{user}.jpg")
      
