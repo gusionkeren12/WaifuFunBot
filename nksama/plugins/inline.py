@@ -28,7 +28,6 @@ async def inline_query_handler(client, query):
             results=[
                InlineQueryResultPhoto(
                     input_message_content=InputTextMessageContent(
-                       thumb_url = "https://telegra.ph/file/c9c62179fef22450bb342.jpg", 
                        photo_url = "https://telegra.ph/file/c9c62179fef22450bb342.jpg",
                     caption=text, disable_web_page_preview=True
                     ),
