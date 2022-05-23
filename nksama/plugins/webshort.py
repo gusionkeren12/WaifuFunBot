@@ -8,7 +8,7 @@ from nksama.utils.errors import capture_err
 
  
 # Translate
-@app.on_message(filters.command("tr") & ~filters.edited)
+@bot.on_message(filters.command('tr'))
 @capture_err
 async def tr(_, message):
     if len(message.command) != 2:
@@ -31,7 +31,7 @@ async def tr(_, message):
     await message.reply_text(result.result.translatedText)
 
 
-@app.on_message(filters.command("json") & ~filters.edited)
+@app.on_message(filters.command("json"))
 @capture_err
 async def json_fetch(_, message):
     if len(message.command) != 2:
