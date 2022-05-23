@@ -82,7 +82,7 @@ async def bug(_, msg: Message):
 
         await pgram.send_document(
             SUPPORT_CHAT,
-            photo=thumb,
+            document=thumb,
             caption=f"{bug_report}",
             reply_markup=InlineKeyboardMarkup(
                 [
