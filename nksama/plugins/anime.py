@@ -152,11 +152,29 @@ async def meme(_,message):
 	      message.chat.id , pic , caption=title)
 
 
-@bot.on_message(filters.command("hmeme"))
-async def hmeme(_,message):
-	r = requests.get('https://nksamamemeapi.pythonanywhere.com/get/hentaimemes').json()
-	pic = r['image']
-	title = r['title']
-      
-     await bot.send_photo(
-		message.chat.id , pic , caption=title)
+@bot.on_message(filters.command('meme'))
+def meme(_,message):
+    reply = message.reply_to_message
+    if reply:
+        r = requests.get('https://nksamamemeapi.pythonanywhere.com').json()
+        pic = r['image']
+        title = r['title']
+        reply.reply_photo(pic,caption=title)
+        
+    else:
+        message.reply_photo(pic,caption=title)
+	
+	
+@bot.on_message(filters.command('hmeme'))
+def hmeme(_,message):
+    reply = message.reply_to_message
+    if reply:
+        r = requests.get('').json()
+        pic = r['image']
+        title = r['title']
+        reply.reply_photo(pic,caption=title)
+        
+    else:
+        message.reply_photo(pic,caption=title)
+	
+	
