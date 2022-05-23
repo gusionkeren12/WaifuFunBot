@@ -183,11 +183,12 @@ async def invitelink(client, message):
 @app.on_message(filters.command("ping", prefixes=['/', '.', '?', '-']))
 async def ping(_, m):
     start_time = time.time()
+    img = "https://telegra.ph/file/fb6a277156b2956f26aa1.jpg"
     text = await m.reply_text("Pinging...")
     end_time = time.time()
     ping_time = round((end_time - start_time) * 1000, 3)
     uptime = get_readable_time((time.time() - StartTime))
     m.delete()
-    await text.edit_text(f"**🏓 PONG!!:** `{ping_time} ms`\n**🆙 UPTIME:** `{uptime}`")
+    await m.reply_photo(photo=img,f"**🏓 PONG!!:** `{ping_time} ms`\n**🆙 UPTIME:** `{uptime}`")
     
     
