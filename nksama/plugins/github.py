@@ -24,3 +24,6 @@ def git(_, message):
 
     message.reply_photo(f"{user}.jpg", caption=data)
     os.remove(f"{user}.jpg")
+    
+    else:
+        message.reply_text("usage: /github ctzfamily")
