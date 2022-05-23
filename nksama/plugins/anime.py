@@ -142,15 +142,6 @@ def pat(_,message):
         message.reply_animation(url)
 
         
-@bot.on_message(filters.command("meme"))
-async def meme(_,message):
-	r = requests.get('https://nksamamemeapi.pythonanywhere.com').json()
-	pic = r['image']
-	title = r['title']
-     
-    await bot.send_photo(
-	      message.chat.id , pic , caption=title)
-
 
 @bot.on_message(filters.command('meme'))
 def meme(_,message):
