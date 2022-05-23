@@ -26,4 +26,4 @@ def git(_, message):
     os.remove(f"{user}.jpg")
     
     else:
-         message.reply_text("usage: /github ctzfamily")
+           message.reply_text("usage: /github ctzfamily")
