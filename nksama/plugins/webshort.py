@@ -3,7 +3,7 @@ from pyrogram import filters
 from pyrogram.types import Message
 
 from nksama import bot as app
-from wbb.core.decorators.errors import capture_err
+from nksama.utils.errors import capture_err
 
 
 
