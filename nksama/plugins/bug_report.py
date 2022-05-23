@@ -78,9 +78,9 @@ async def bug(_, msg: Message):
             ),
         )
 
-        thumb = "https://i.pinimg.com/564x/f2/47/8b/f2478ba4e193470ebcdf61a2ad0f33ce.jpg"
+        thumb = "https://telegra.ph/file/7da5ad0e120e7df8c2ed5.jpg"
 
-        await pgram.send_photo(
+        await pgram.send_document(
             SUPPORT_CHAT,
             photo=thumb,
             caption=f"{bug_report}",
