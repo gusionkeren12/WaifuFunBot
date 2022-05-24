@@ -1,5 +1,6 @@
 from pyrogram import filters , Client
 import os , time
+from aiohttp import ClientSession
 from telegraph import Telegraph
 StartTime = time.time()
 
@@ -24,7 +25,7 @@ bot = Client("nksama", api_id=API_ID, api_hash=API_HASH, bot_token=BOT_TOKEN, pl
 print("Bot is Working")
 
 help_message = []
-
+aiohttpsession = ClientSession()
 telegraph = Telegraph()
 telegraph.create_account(short_name=BOT_USERNAME)
 
