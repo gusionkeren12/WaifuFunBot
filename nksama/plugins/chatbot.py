@@ -59,12 +59,12 @@ async def type_and_send(message: Message):
 
 
 @app.on_message(
-    filters.text,
-    filters.reply,
-    filters.bot,
-    filters.via_bot,
-    filters.forwarded,
-    group=chatbot_group,
+    filters.text ,
+    filters.reply ,
+    filters.bot ,
+    filters.via_bot ,
+    filters.forwarded ,
+    group=chatbot_group ,
 )
 @capture_err
 async def chatbot_talk(_, message: Message):
