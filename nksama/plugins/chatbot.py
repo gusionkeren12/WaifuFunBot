@@ -5,7 +5,7 @@ from pyrogram import filters
 from pyrogram.types import Message
 
 from nksama import (BOT_ID, SUDOERS as dev_user,
-                 app, arq )
+                 bot as app, arq )
 from nksama.utils.errors import capture_err
 from nksama.utils.filter_groups import chatbot_group
 
