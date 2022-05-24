@@ -59,10 +59,10 @@ async def type_and_send(message: Message):
 
 
 @app.on_message(
-    filters.text
-    filters.reply
-    filters.bot
-    filters.via_bot
+    filters.text,
+    filters.reply,
+    filters.bot,
+    filters.via_bot,
     filters.forwarded,
     group=chatbot_group,
 )
