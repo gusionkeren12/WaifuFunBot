@@ -26,6 +26,7 @@ print("Bot is Working")
 
 help_message = []
 aiohttpsession = ClientSession()
+arq = ARQ(ARQ_API_URL, ARQ_API_KEY, aiohttpsession)
 telegraph = Telegraph()
 telegraph.create_account(short_name=BOT_USERNAME)
 
