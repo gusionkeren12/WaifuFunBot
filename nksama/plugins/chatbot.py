@@ -12,6 +12,12 @@ from nksama.utils.filter_groups import chatbot_group
 active_chats_bot = []
 active_chats_ubot = []
 
+async def eor(msg: Message, **kwargs):
+    func = (
+        (msg.edit_text if msg.from_user.is_self else msg.reply)
+        if msg.from_user
+        else msg.reply
+    )
 
 async def chat_bot_toggle(db, message: Message):
     status = message.text.split(None, 1)[1].lower()
