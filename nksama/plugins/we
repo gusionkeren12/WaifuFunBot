@@ -2,7 +2,7 @@
 from pyrogram import filters
 from pyrogram.types import Message
 
-from nksama import bot as app
+from nksama import bot as app, bot
 from nksama.utils.errors import capture_err
 
 
