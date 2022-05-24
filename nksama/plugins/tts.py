@@ -7,7 +7,7 @@ from gtts import gTTS
 from pyrogram import filters
 from pyrogram.types import Message
 
-from wbb import app
+from nksama import bot as app
 
 
 def convert(text):
