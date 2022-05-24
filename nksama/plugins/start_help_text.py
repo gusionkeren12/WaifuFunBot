@@ -4,12 +4,12 @@ from pyrogram.types import Message
 from pyrogram.types.bots_and_keyboards.inline_keyboard_button import InlineKeyboardButton
 from pyrogram.types.bots_and_keyboards.inline_keyboard_markup import InlineKeyboardMarkup
 from nksama import bot, SUPPORT_CHAT
-from pyrogram import __version__ as pyro
+import pyrogram 
 
-alive = f"""
+alive = """
 hello! dear {}
 [BOT](t.me/vegetarobot): `Alive`
-[pyrogram](pyrogram.com): {pyro}
+[pyrogram](pyrogram.com): {}
 """
 
 @bot.on_message(filters.command(["alive"], ["/", ".", "?"]))
@@ -22,7 +22,7 @@ async def alive(_, m: Message):
                 "SUPPORT", url="t.me/Vegetasupport"),]]
 
     await m.reply_text(
-        alive=text.format(m.from_user.mention),
+        alive=text.format(m.from_user.mention, pyrogram.__version__),
         reply_markup=InlineKeyboardMarkup(buttons),
     )
            
