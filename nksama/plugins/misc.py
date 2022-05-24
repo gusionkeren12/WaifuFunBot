@@ -4,7 +4,7 @@ from pyrogram.types import Message
 
 from nksama import bot as app, bot
 from nksama.utils.errors import capture_err
-
+from nksama.utils.http import get
 
  
    
