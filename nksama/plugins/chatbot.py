@@ -57,7 +57,13 @@ async def type_and_send(message: Message):
     await message._client.send_chat_action(chat_id, "cancel")
 
 
-@app.on_message(filters.text,filters.reply,filters.botfilters.via_bot,filters.forwarded,group=chatbot_group,
+@app.on_message(
+    filters.text
+    & filters.reply
+    & ~filters.bot
+    & ~filters.via_bot
+    & ~filters.forwarded,
+    group=chatbot_group,
 )
 @capture_err
 async def chatbot_talk(_, message: Message):
