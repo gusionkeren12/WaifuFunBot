@@ -10,7 +10,7 @@ deathnote_img = "https://telegra.ph/file/9e220eb59606f8435eafe.mp4"
 def adddeathnote(_, m: Message):
     reply = m.reply_to_message
     if reply:
-        dnote.append(reply.from_user.full_name)
+        dnote.append(reply.from_user.first_name)
         reply.reply_animation(deathnote_img,
                               caption="{} Added Death Note List!".format(reply.from_user.mention))
         
@@ -22,7 +22,7 @@ def adddeathnote(_, m: Message):
 def removedeathnote(_, m: Message):
     reply = m.reply_to_message
     if reply:
-        dnote.remove(reply.from_user.full_name)
+        dnote.remove(reply.from_user.first_name)
         reply.reply_animation(deathnote_img,
                               caption="{} Removed Death Note List!".format(reply.from_user.mention))
         
