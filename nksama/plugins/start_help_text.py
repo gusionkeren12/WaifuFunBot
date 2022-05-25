@@ -4,7 +4,7 @@ from pyrogram.types import Message
 from pyrogram.types.bots_and_keyboards.inline_keyboard_button import InlineKeyboardButton
 from pyrogram.types.bots_and_keyboards.inline_keyboard_markup import InlineKeyboardMarkup
 from nksama import bot, SUPPORT_CHAT
-import pyrogram 
+from pyrogram import __version__ as pyrover
 
 alive = """
 hello! dear {}
@@ -15,8 +15,7 @@ alive_img = "https://telegra.ph/file/ae781099fa59c693b6b46.jpg"
 
 @bot.on_message(filters.command(["alive"], ["/", ".", "?"]))
 async def alive(_, m: Message):
-    first_name = m.from_user.mention
-    pyro_ver = pyrogram.__version__
+    mention = m.from_user.mention
     buttons = [
         [
             InlineKeyboardButton(
@@ -25,7 +24,7 @@ async def alive(_, m: Message):
                 "SUPPORT", url="t.me/Vegetasupport"),]]
 
     await m.reply_photo(
-         alive_img,caption=alive.format(first_name,pyro_ver),
+         alive_img,caption=alive.format(mention,pyrover),
         reply_markup=InlineKeyboardMarkup(buttons),
     )
            
