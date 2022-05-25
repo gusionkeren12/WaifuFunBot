@@ -2,9 +2,29 @@ from pyrogram import Client, filters
 from nksama import bot
 from nksama.utils.admin_check import admin_check
 from nksama.utils.extract_user import extract_user
-from nksama.utils.string_handling import extract_time
 
+def extract_time(time_val):
+    if any(time_val.endswith(unit) for unit in ('s', 'm', 'h', 'd')):
+        unit = time_val[-1]
+        time_num = time_val[:-1]  # type: str
+        if not time_num.isdigit():
+            return None
 
+        if unit == 's':
+            bantime = int(time.time() + int(time_num))
+        elif unit == 'm':
+            bantime = int(time.time() + int(time_num) * 60)
+        elif unit == 'h':
+            bantime = int(time.time() + int(time_num) * 60 * 60)
+        elif unit == 'd':
+            bantime = int(time.time() + int(time_num) * 24 * 60 * 60)
+        else:
+            # how even...?
+            return None
+        return bantime
+    else:
+        return None
+    
 @bot.on_message(filters.command('ban'))
 async def ban_user(_, message):
     is_admin = await admin_check(message)
