@@ -117,7 +117,7 @@ async def chat_info_func(_, message: Message):
         await m.edit(e)
         
 @bot.on_message(filters.command('id'))
-def ids(_,message):
+def id(_,message):
   reply = message.reply_to_message
   if reply:
     message.reply_text(f"**Your id**: {message.from_user.id}\n**User id**: {reply.from_user.id}\n**chat id**: {message.chat.id}")
