@@ -146,7 +146,7 @@ def get_file_id(msg: Message):
     
     
 @bot.on_message(filters.command('id'))
-async def id(bot: client, message):
+async def id(_, message):
     chat_type = message.chat.type
 
     if chat_type == "private":
