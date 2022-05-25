@@ -1,4 +1,4 @@
-
+import os
 from pyrogram import filters
 from pyrogram.types import Message
 
@@ -6,28 +6,9 @@ from nksama import bot as app, bot, arq
 from nksama.utils.errors import capture_err
 from nksama.utils.http import get
 
-async def json_object_prettify(objecc):
-    dicc = objecc.__dict__
-    output = ""
-    for key, value in dicc.items():
-        if key in ["pinned_message", "photo", "_", "_client"]:
-            continue
-        output += f"**{key}:** `{value}`\n"
-    return output
 
 
-async def json_prettify(data):
-    output = ""
-    try:
-        for key, value in data.items():
-            output += f"**{str(key).capitalize()}:** `{value}`\n"
-    except Exception:
-        for datas in data:
-            for key, value in datas.items():
-                output += f"**{str(key).capitalize()}:** `{value}`\n"
-            output += "------------------------\n"
-    return output
-   
+
 # Translate
 @bot.on_message(filters.command('tr'))
 @capture_err
@@ -52,40 +33,27 @@ async def tr(_, message):
     await message.reply_text(result.result.translatedText)
 
 
-@app.on_message(filters.command("json"))
-@capture_err
-async def json_fetch(_, message):
-    if len(message.command) != 2:
-        return await message.reply_text("/json [URL]")
-    url = message.text.split(None, 1)[1]
-    m = await message.reply_text("Fetching")
+
+
+@bot.on_message(filters.command('json'))
+async def jsonify(_, message):
+    the_real_message = None
+    reply_to_id = None
+
+    if message.reply_to_message:
+        the_real_message = message.reply_to_message
+    else:
+        the_real_message = message
+
     try:
-        data = await get(url)
-        data = await json_prettify(data)
-        if len(data) < 4090:
-            await m.edit(data)
-        else:
-            link = await paste(data)
-            await m.edit(
-                f"[OUTPUT_TOO_LONG]({link})",
-                disable_web_page_preview=True,
-            )
+        await message.reply_text(f"<code>{the_real_message}</code>")
     except Exception as e:
-        await m.edit(str(e))
-
-
-@app.on_message(filters.command("webss"))
-@capture_err
-async def take_ss(_, message):
-    if len(message.command) != 2:
-        return await message.reply_text("Give A Url To Fetch Screenshot.")
-    url = message.text.split(None, 1)[1]
-    m = await message.reply_text("**Uploading**")
-    try:
-        await app.send_photo(
-            message.chat.id,
-            photo=f"https://webshot.amanoteam.com/print?q={url}",
+        with open("json.text", "w+", encoding="utf8") as out_file:
+            out_file.write(str(the_real_message))
+        await message.reply_document(
+            document="json.text",
+            caption=str(e),
+            disable_notification=True,
+            reply_to_message_id=reply_to_id,
         )
-    except Exception:
-        return await m.edit("No Such Website.")
-    await m.delete()
+        os.remove("json.text")
