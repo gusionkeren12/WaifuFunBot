@@ -22,7 +22,7 @@ async def alive(_, m: Message):
                 "SUPPORT", url="t.me/Vegetasupport"),]]
 
     await m.reply_text(
-        alive=text.format(m.from_user.mention, pyrogram.__version__),
+        text=alive.format(m.from_user.mention, pyrogram.__version__),
         reply_markup=InlineKeyboardMarkup(buttons),
     )
            
