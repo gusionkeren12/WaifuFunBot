@@ -25,7 +25,7 @@ async def alive(_, m: Message):
     alive += f"\npyrogram: `{pyrover}`"
 
     await m.reply_photo(
-         alive_img,caption=alive.
+         alive_img,caption=(alive).
         reply_markup=InlineKeyboardMarkup(buttons),
     )
            
