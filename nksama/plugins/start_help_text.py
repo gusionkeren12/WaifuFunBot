@@ -4,30 +4,9 @@ from pyrogram.types import Message
 from pyrogram.types.bots_and_keyboards.inline_keyboard_button import InlineKeyboardButton
 from pyrogram.types.bots_and_keyboards.inline_keyboard_markup import InlineKeyboardMarkup
 from nksama import bot, SUPPORT_CHAT
-from pyrogram import __version__ as pyrover
 
 
 
-alive_img = "https://telegra.ph/file/ae781099fa59c693b6b46.jpg"
-
-@bot.on_message(filters.command(["alive"], ["/", ".", "?"]))
-async def alive(_, m: Message):
-    mention = m.from_user.mention
-    buttons = [
-        [
-            InlineKeyboardButton(
-                "UPDATES", url="t.me/Vegetaupdates"),
-            InlineKeyboardButton(
-                "SUPPORT", url="t.me/Vegetasupport"),]]
-    
-    alive = f"hello! Dear **{mention}**"
-    alive += f"\n**BOT**: `Alive`"
-    alive += f"\npyrogram: `{pyrover}`"
-
-    await m.reply_photo(
-         alive_img,caption=(alive).
-        reply_markup=InlineKeyboardMarkup(buttons),
-    )
            
 BOT_IMG = [ "https://telegra.ph/file/b3fbf990e0b67ede241a3.jpg",
            "https://telegra.ph/file/94865dae2576a2fa52732.jpg" ]
