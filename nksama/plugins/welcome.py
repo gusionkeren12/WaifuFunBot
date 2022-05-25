@@ -6,6 +6,6 @@ from nksama import bot
 async def welcome(_, m: Message):
         await m.reply("hello! dear {}\nWelcome to **{}**".format(m.from_user.mention,m.chat.title))
         
-@bot.on_message(filters.left_chat_members)
+@bot.on_message(filters.left_chat_member)
 async def left(_, m: Message):
         await m.reply("oof! dear {}\nlefted to **{}**".format(m.from_user.mention,m.chat.title))
