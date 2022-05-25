@@ -18,7 +18,7 @@ def adddeathnote(_, m: Message):
         m.reply_animation(deathnote_img,
                               caption="{} Added Death Note List!".format(m.from_user.mention))
   
-bot.on_message(filters.command('removedeathnote'))
+@bot.on_message(filters.command('removedeathnote'))
 def removedeathnote(_, m: Message):
     reply = m.reply_to_message
     if reply:
