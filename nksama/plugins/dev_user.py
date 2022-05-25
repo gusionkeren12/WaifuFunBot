@@ -188,7 +188,7 @@ async def ping(_, m):
     ping_time = round((end_time - start_time) * 1000, 3)
     uptime = get_readable_time((time.time() - StartTime))
     await m.reply_text("ping....")
-    m.delete()
+    await m.delete()
     await m.reply_photo(photo=img, caption=f"**🏓 PONG!!:** `{ping_time} ms`\n**🆙 UPTIME:** `{uptime}`")
     
     
