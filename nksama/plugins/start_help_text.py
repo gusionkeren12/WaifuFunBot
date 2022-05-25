@@ -14,6 +14,8 @@ hello! dear {}
 
 @bot.on_message(filters.command(["alive"], ["/", ".", "?"]))
 async def alive(_, m: Message):
+    first_name = m.from_user.mention
+    pyro_ver = pyrogram.__version__
     buttons = [
         [
             InlineKeyboardButton(
@@ -22,7 +24,7 @@ async def alive(_, m: Message):
                 "SUPPORT", url="t.me/Vegetasupport"),]]
 
     await m.reply_text(
-         alive.format(m.from_user.mention, pyrogram.__version__),
+         alive.format(first_name,pyro_ver),
         reply_markup=InlineKeyboardMarkup(buttons),
     )
            
