@@ -23,6 +23,6 @@ def deathnote(_, m: Message):
 def dlist(_, m):
     reply = m.reply_to_message
     if reply:
-        reply_text(dnote)
+        reply(str(dnote))
     else:
-        m.reply_text(dnote)
+        m.reply(str(dnote))
