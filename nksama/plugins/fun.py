@@ -17,4 +17,12 @@ def deathnote(_, m: Message):
     else:
         m.reply_animation(deathnote_img,
                               caption="{} Added Death Note List!".format(m.from_user.mention))
-        
+  
+
+@bot.on_message(filters.command('dlist'))
+def dlist(_, m):
+    reply = m.reply_to_message
+    if reply:
+        reply_text(dnote)
+    else:
+        m.reply_text(dnite)
