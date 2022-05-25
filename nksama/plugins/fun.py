@@ -9,7 +9,7 @@ def deathnote(_, m: Message):
     reply = m.reply_to_message
     if reply:
         reply.reply_animation(deathnote_img,
-                              caption="{} Added Death Note List!".format(m.reply_user.mention))
+                              caption="{} Added Death Note List!".format(reply.from_user.mention))
         
     else:
         m.reply_animation(deathnote_img,
