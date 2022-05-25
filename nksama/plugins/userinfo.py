@@ -1,6 +1,6 @@
 import os
 
-from pyrogram import filters
+from pyrogram import filters,Client
 from pyrogram.types import Message
 
 from pyrogram.types.messages_and_media import message
