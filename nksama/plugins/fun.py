@@ -10,7 +10,7 @@ deathnote_img = "https://telegra.ph/file/9e220eb59606f8435eafe.mp4"
 def deathnote(_, m: Message):
     reply = m.reply_to_message
     if reply:
-        dnote.append(reply.from_user.mention)
+        dnote.append(reply.from_user.first_name)
         reply.reply_animation(deathnote_img,
                               caption="{} Added Death Note List!".format(reply.from_user.mention))
         
@@ -25,4 +25,4 @@ def dlist(_, m):
     if reply:
         reply_text(dnote)
     else:
-        m.reply_text(dnite)
+        m.reply_text(dnote)
