@@ -3,7 +3,7 @@ from pyrogram import filters
 from pyrogram.types import Message
 
 @bot.on_message(filters.command('ban'))
-def ban(_,m: message):
+def ban(_,m: Message):
     reply = message.reply_to_message
     if m.from_user.id in dev_user:
         bot.kick_chat_member(m.chat.id , reply.from_user.id)
