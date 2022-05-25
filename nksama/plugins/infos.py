@@ -3,6 +3,8 @@ import os
 from pyrogram import filters
 from pyrogram.types import Message
 
+from pyrogram.types.messages_and_media import message
+
 from nksama import dev_user, bot
 from nksama.utils.sections import section
 
@@ -118,11 +120,26 @@ async def chat_info_func(_, message: Message):
         await m.edit(e)
 
 
-@bot.on_message(filters.command('id'))
-def ids(_,message):
-  reply = message.reply_to_message
-  if reply:
-    message.reply_text(f"**➢ Your ID**: `{message.from_user.id}`\n**➢ {reply.from_user.first_name}'s ID**: `{reply.from_user.id}`\n**➢ Chat ID**: `{message.chat.id}`")
-  else:
-    message.reply(f"**➢ Your id**: `{message.from_user.id}`\n**➢ Chat ID**: `{message.chat.id}`")        
-        
+
+
+def get_file_id(msg: Message):
+    if msg.media:
+        for message_type in (
+            "photo",
+            "animation",
+            "audio",
+            "document",
+            "video",
+            "video_note",
+            "voice",
+            # "contact",
+            # "dice",
+            # "poll",
+            # "location",
+            # "venue",
+            "sticker",
+        ):
+            obj = getattr(msg, message_type)
+            if obj:
+                setattr(obj, "message_type", message_type)
+                return obj
