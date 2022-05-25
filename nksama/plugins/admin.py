@@ -7,7 +7,7 @@ def ban(_,m: message):
     reply = message.reply_to_message
     if m.from_user.id in dev_user:
         bot.kick_chat_member(m.chat.id , reply.from_user.id)
-        bot.send_message(m.chat.id ,f"Banned! {reply.from_user.mention}")
+       await bot.send_message(m.chat.id ,f"Banned! {reply.from_user.mention}")
     
     else:
         m.reply("only Dev use this")
