@@ -6,11 +6,8 @@ from pyrogram.types.bots_and_keyboards.inline_keyboard_markup import InlineKeybo
 from nksama import bot, SUPPORT_CHAT
 from pyrogram import __version__ as pyrover
 
-alive = """
-hello! dear {}
-[BOT](t.me/vegetarobot): `Alive`
-[pyrogram](pyrogram.com): {}
-"""
+
+
 alive_img = "https://telegra.ph/file/ae781099fa59c693b6b46.jpg"
 
 @bot.on_message(filters.command(["alive"], ["/", ".", "?"]))
@@ -22,9 +19,13 @@ async def alive(_, m: Message):
                 "UPDATES", url="t.me/Vegetaupdates"),
             InlineKeyboardButton(
                 "SUPPORT", url="t.me/Vegetasupport"),]]
+    
+    alive = f"hello! Dear **{mention}**"
+    alive += f"\n**BOT**: `Alive`"
+    alive += f"\npyrogram: `{pyrover}`"
 
     await m.reply_photo(
-         alive_img,caption=alive.format(mention,pyrover),
+         alive_img,caption=alive.
         reply_markup=InlineKeyboardMarkup(buttons),
     )
            
