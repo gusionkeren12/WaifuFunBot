@@ -11,6 +11,7 @@ hello! dear {}
 [BOT](t.me/vegetarobot): `Alive`
 [pyrogram](pyrogram.com): {}
 """
+alive_img = "https://telegra.ph/file/ae781099fa59c693b6b46.jpg"
 
 @bot.on_message(filters.command(["alive"], ["/", ".", "?"]))
 async def alive(_, m: Message):
@@ -23,8 +24,8 @@ async def alive(_, m: Message):
             InlineKeyboardButton(
                 "SUPPORT", url="t.me/Vegetasupport"),]]
 
-    await m.reply_text(
-         alive.format(first_name,pyro_ver),
+    await m.reply_photo(
+         alive_img,caption=alive.format(first_name,pyro_ver),
         reply_markup=InlineKeyboardMarkup(buttons),
     )
            
