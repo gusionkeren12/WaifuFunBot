@@ -37,7 +37,7 @@ def kick(_, m: Message):
         
 @bot.on_message(filters.command('pin'))
 def pin(_, m: Message):
-    message_id = m.reply_to_Message.message.id
+    message_id = m.reply_to_message.id
     reply = m.reply_to_message
     if m.from_user.id in dev_user:
         bot.pin_chat_message(m.chat.id , message_id)
