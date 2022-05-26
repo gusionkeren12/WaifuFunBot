@@ -39,7 +39,7 @@ def kick(_, m: Message):
 def pin(_, m: Message):
     reply = m.reply_to_message
     message_id = m.reply_to_message.message_id
-       await m.reply("`Only Dev can Use this`")
+       await bot.send_message("`Only Dev can Use this`")
      if m.from_user.id in dev_user:
       bot.pin_chat_message(m.chat.id , message_id)
       bot.send_message(m.chat.id,
