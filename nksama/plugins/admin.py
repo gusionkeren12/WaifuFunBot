@@ -40,7 +40,7 @@ def pin(_, m: Message):
     reply = m.reply_to_message
     message_id = m.reply_to_message.message_id
     dev_msg = "`Only Dev can Use this`"
-     if m.from_user.id in dev_user:
+    if m.from_user.id in dev_user:
       bot.pin_chat_message(m.chat.id , message_id)
       bot.send_message(m.chat.id,
          f"message pinned! [link](t.me/-{m.chat.id}/{message_id})\nAdmin: {m.from_user.mention}")
