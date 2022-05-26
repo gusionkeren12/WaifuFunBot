@@ -27,8 +27,7 @@ def unban(_, m: Message):
 @bot.on_message(filters.command('kick'))
 def kick(_, m: Message):
     reply = m.reply_to_message
-          
-        if m.from_user.id in dev_user:
+    if m.from_user.id in dev_user:
             bot.ban_chat_member(m.chat.id , reply.from_user.id)
         bot.send_message(m.chat.id ,f"Kicked! {reply.from_user.mention}")
         bot.unban_chat_member(m.chat.id, reply.from_user.id)
@@ -39,7 +38,6 @@ def kick(_, m: Message):
 @bot.on_message(filters.command('pin'))
 def pin(_, m: Message):
     reply = m.reply_to_message
-    
     if m.from_user.id in dev_user:
         bot.pin_chat_message(m.chat.id , reply.message_id)
         bot.send_message(m.chat.id ,f"pinned by {m.from_user.mention}!")
