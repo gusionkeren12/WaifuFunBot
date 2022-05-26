@@ -47,3 +47,15 @@ def pin(_, m: Message):
         m.reply("`only Dev use this`")
 
         
+@bot.on_message(filters.command('unpin'))
+def unpin(_, m: Message):
+    message_id = m.reply_to_message.id
+    reply = m.reply_to_message
+    if m.from_user.id in dev_user:
+        bot.unpin_chat_message(m.chat.id , message_id)
+        bot.send_message(m.chat.id ,f"unpinned by {m.from_user.mention}!")
+    
+    else:
+        m.reply("`only Dev use this`")
+
+        
