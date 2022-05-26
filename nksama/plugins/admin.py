@@ -37,9 +37,9 @@ def kick(_, m: Message):
         
 @bot.on_message(filters.command('pin'))
 def pin(_, m: Message):
-     message_id = m.reply_to_message.message_id
-     reply = m.reply_to_message
+    reply = m.reply_to_message
+    message_id = m.reply_to_message.message_id
             if m.from_user.id in dev_user:
-       bot.pin_chat_member(m.chat.id, message_id)
+              bot.pin_chat_member(m.chat.id, message_id)
        bot.send_message(m.chat.id,
                         f"admin: {m.from_user.mention},\npinned messages https://t.me/c/{m.chat.id}/{message_id},)
