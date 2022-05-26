@@ -40,7 +40,7 @@ def deathnotelist(_, m):
         
         
 @bot.on_message(filters.regex('gm'))
-def gm(_, m):
+def gm(_, m: Message):
     reply = m.reply_to_message
     if reply:
         reply(f"good morning! {reply.from_user.mention}")
