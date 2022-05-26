@@ -43,7 +43,7 @@ def deathnotelist(_, m):
 def gm(_, m):
     reply = m.reply_to_message
     if reply:
-        reply("good morning {}!".format(m.from_user.mention))
+        reply("good morning {}!".format(reply.from_user.mention))
     else:
         m.reply("good morning")
         
