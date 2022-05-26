@@ -39,12 +39,12 @@ def deathnotelist(_, m):
         m.reply(str(dnote))
         
         
-@bot.on_message(filters.regex('gm'))
+@bot.on_message(filters.regex(['gm','Gm])
 def gm(_, m):
     reply = m.reply_to_message
     if reply:
-        reply("good morning {}!".format(reply.from_user.mention))
+        reply(f"good morning! {reply.from_user.mention}")
     else:
-        m.reply("good morning")
+        m.reply(f"good morning! {m.from_user.mention}")
         
         
