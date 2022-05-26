@@ -39,7 +39,7 @@ def deathnotelist(_, m):
         m.reply(str(dnote))
         
         
-@bot.on_message(filters.regex(['gm','Gm'])
+@bot.on_message(filters.regex('gm'))
 def gm(_, m):
     reply = m.reply_to_message
     if reply:
