@@ -40,11 +40,12 @@ def pin(_, m: Message):
      msgid = m.reply_to_message.message_id
      if not message.reply_to_message:
         return await message.reply_text("Reply to a message to /pin it.")
-    if m.from_user.id in dev_user:
+    Dev = "Dec can use this lol!"
+        if m.from_user.id in dev_user:
       bot.pin_chat_message(m.chat.id , msgid)
       bot.send_message(m.chat.id,
          f"message pinned! [link](t.me/c/-100{m.chat.id}/{msgid})\nAdmin: {m.from_user.mention}")
                  
     else:
-        m.reply("`Dev only use this lol! `")
+        m.reply(Dev)
         
