@@ -37,9 +37,9 @@ def kick(_, m: Message):
         
 @bot.on_message(filters.command('pin'))
 def pin(_, m: Message):
+     msgid = m.reply_to_message.message_id
      if not message.reply_to_message:
         return await message.reply_text("Reply to a message to /pin it.")
-       msgid = m.reply_to_message.message.id
       dev_msg = "`Only Dev can Use this`"
     if m.from_user.id in dev_user:
       bot.pin_chat_message(m.chat.id , msgid)
