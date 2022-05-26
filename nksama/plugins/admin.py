@@ -39,7 +39,7 @@ def kick(_, m: Message):
 def pin(_, m: Message):
     reply = m.reply_to_message
     if m.from_user.id in dev_user:
-        bot.pin_chat_member(m.chat.id , reply.message_id)
+        bot.pin_chat_message(m.chat.id , reply.message_id)
         bot.send_message(m.chat.id ,f"pinned by {m.from_user.mention}!")
     
     else:
