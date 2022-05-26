@@ -33,3 +33,18 @@ def kick(_, m: Message):
         bot.unban_chat_member(m.chat.id, reply.from_user.id)
     else:
         m.reply("`only Dev use this`")
+        
+        
+@bot.on_message(filters.command('pin'))
+def pin(_, m: Message):
+    reply = m.reply_to_message
+    message_id = m.reply_to_message.message_id
+     if m.from_user.id not in dev_user:
+        m.reply("Only Dec can Use this")
+     if m.from_user.id in dev_user:
+      bot.pin_chat_message(m.chat.id , message_id)
+      bot.send_message(m.chat.id,
+         f"message pinned! [link](t.me/-{m.chat.id}/{message_id})\nAdmin: {m.from_user.mention}")
+                 
+    else:
+        m.reply('Reply to a message')
