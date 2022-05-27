@@ -2,6 +2,7 @@ from nksama import bot,  dev_user
 from nksama.config import BOT_ID
 from pyrogram import filters
 from pyrogram.types import Message
+from nksama.utils.pluginshelper import extract_user
 
 async def member_permissions(chat_id: int, user_id: int):
     perms = []
