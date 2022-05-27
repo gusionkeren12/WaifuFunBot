@@ -134,7 +134,6 @@ async def purgeFunc(_, message: Message):
             revoke=True,
         )
  
- from nksama import bot as app
     
 @bot.on_message(
     filters.command(["promote", "fullpromote"]))
