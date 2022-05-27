@@ -115,7 +115,7 @@ async def purgeFunc(_, message: Message):
 
         # Max message deletion limit is 100
         if len(message_ids) == 100:
-            await app.delete_messages(
+            await bot.delete_messages(
                 chat_id=chat_id,
                 message_ids=message_ids,
                 revoke=True,  # For both sides
