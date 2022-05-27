@@ -2,19 +2,31 @@ from nksama import bot, dev_user
 from pyrogram import filters
 from pyrogram.types import Message
 
-def is_admin(group_id: int, user_id: int):
+async def member_permissions(chat_id: int, user_id: int):
+    perms = []
     try:
-        user_data = bot.get_chat_member(group_id, user_id)
-        if user_data.status == 'administrator' or user_data.status == 'creator':
-            # print(f'is admin user_data : {user_data}')
-            return True
-        else:
-            # print('Not admin')
-            return False
-    except:
-        # print('Not admin')
-        return False
-
+        member = await app.get_chat_member(chat_id, user_id)
+    except Exception:
+        return []
+    if member.can_post_messages:
+        perms.append("can_post_messages")
+    if member.can_edit_messages:
+        perms.append("can_edit_messages")
+    if member.can_delete_messages:
+        perms.append("can_delete_messages")
+    if member.can_restrict_members:
+        perms.append("can_restrict_members")
+    if member.can_promote_members:
+        perms.append("can_promote_members")
+    if member.can_change_info:
+        perms.append("can_change_info")
+    if member.can_invite_users:
+        perms.append("can_invite_users")
+    if member.can_pin_messages:
+        perms.append("can_pin_messages")
+    if member.can_manage_voice_chats:
+        perms.append("can_manage_voice_chats")
+    return perms
 
 @bot.on_message(filters.command('ban'))
 def ban(_, m: Message):
