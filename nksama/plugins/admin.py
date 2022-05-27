@@ -73,16 +73,11 @@ def unpin(_, m: Message):
     else:
        m.reply("`only Dev use this`")
     
-@bot.on_message(filters.command('promote')) 
-def promote(_,message):
-    if is_admin(message.chat.id , message.from_user.id) and message.reply_to_message:
-       message.chat.promote_member(message.reply_to_message.from_user.id)
-       message.reply('Promoted @{} !'.format(message.reply_to_message.from_user.username))
-
-@bot.on_message(filters.command('demote')) 
-def demote(_,message):
-    if is_admin(message.chat.id , message.from_user.id) and message.reply_to_message:
-       message.chat.promote_member(message.reply_to_message.from_user.id, False,False,False,False,False,False,False,False)
-       message.reply('Demoted @{} !'.format(message.reply_to_message.from_user.username))
-
-        
+@bot.on_message(filters.command("del") & ~filters.edited & ~filters.private)
+@adminsOnly("can_delete_messages")
+async def deleteFunc(_, message: Message):
+    if not message.reply_to_message:
+        return await message.reply_text("Reply To A Message To Delete It")
+    await message.reply_to_message.delete()
+    await message.delete()
+    
