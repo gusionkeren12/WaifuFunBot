@@ -1,5 +1,33 @@
 
 
+async def extract_userid(message, text: str):
+    """
+    NOT TO BE USED OUTSIDE THIS FILE
+    """
+
+    def is_int(text: str):
+        try:
+            int(text)
+        except ValueError:
+            return False
+        return True
+
+    text = text.strip()
+
+    if is_int(text):
+        return int(text)
+
+    entities = message.entities
+    app = message._client
+    if len(entities) < 2:
+        return (await app.get_users(text)).id
+    entity = entities[1]
+    if entity.type == "mention":
+        return (await app.get_users(text)).id
+    if entity.type == "text_mention":
+        return entity.user.id
+    return None
+
 async def extract_user_and_reason(message, sender_chat=False):
     args = message.text.strip().split()
     text = message.text
