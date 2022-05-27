@@ -142,7 +142,7 @@ async def promote(_, m: Message):
             bot.promote_chat_member(m.chat.id , reply.from_user.id)
             bot.send_message(m.chat.id ,f"Admin: {m.from_user.mention}\npromoted! {reply.from_user.mention}")
          
-         else: 
+        else: 
               m.reply("user already admin")
 
         
