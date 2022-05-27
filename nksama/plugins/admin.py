@@ -67,28 +67,24 @@ def kick(_, m: Message):
         m.reply("`only Dev use this`")
         
         
-@bot.on_message(filters.command('pin'))
-def pin(_, m: Message):
-    message_id = m.reply_to_message.id
-    reply = m.reply_to_message
-    if m.from_user.id in dev_user:
-        bot.pin_chat_message(m.chat.id , message_id)
-        bot.send_message(m.chat.id ,f"pinned by {m.from_user.mention}!")
-    
-    else:
-        m.reply("`only Dev use this`")
-
-        
-@bot.on_message(filters.command('unpin'))
-def unpin(_, m: Message):
-    message_id = m.reply_to_message.id
-    reply = m.reply_to_message
-    if m.from_user.id in dev_user:
-        bot.unpin_chat_message(m.chat.id , message_id)
-        bot.send_message(m.chat.id ,f"unpinned by {m.from_user.mention}!")
-    
-    else:
-       m.reply("`only Dev use this`")
+ 
+@bot.on_message(filters.command(["pin", "unpin"]) & ~filters.edited & ~filters.private)
+@adminsOnly("can_pin_messages")
+async def pin(_, message: Message):
+    if not message.reply_to_message:
+        return await message.reply_text("Reply to a message to pin/unpin it.")
+    r = message.reply_to_message
+    if message.command[0][0] == "u":
+        await r.unpin()
+        return await message.reply_text(
+                       f"**Unpinned [this]({r.link}) message.**",
+                       disable_web_page_preview=True,
+        )
+    await r.pin(disable_notification=True)
+    await message.reply(
+        f"**Pinned [this]({r.link}) message.**",
+        disable_web_page_preview=True,
+    )       
     
 @bot.on_message(filters.command("del"))
 @adminsOnly("can_delete_messages")
@@ -134,14 +130,3 @@ async def purgeFunc(_, message: Message):
             revoke=True,
         )
  
-
-@bot.on_message(filters.command('promote'))
-@adminsOnly("can_promote_members")
-async def promote(_, m: Message):
-    reply = m.reply_to_message
-    if not reply:
-    return await m.reply("pls reply to user promote admin")
-    await bot.promote_chat_member(m.chat.id , reply.from_user.id)
-    await bot.send_message(m.chat.id ,f"Admin: {m.from_user.mention}\npromoted! {reply.from_user.mention}")
-         
-        
