@@ -143,35 +143,35 @@ async def promoteFunc(_, message: Message):
     umention = message.from_user.mention
     if not user_id:
         return await message.reply_text("I can't find that user.")
-    bot = await bot.get_chat_member(message.chat.id, BOT_ID)
+    x = await app.get_chat_member(message.chat.id, BOT_ID)
     if user_id == BOT_ID:
         return await message.reply_text("I can't promote myself.")
-    if not bot.can_promote_members:
+    if not x.can_promote_members:
         return await message.reply_text("I don't have enough permissions")
     if message.command[0][0] == "f":
         await message.chat.promote_member(
             user_id=user_id,
-            can_change_info=bot.can_change_info,
-            can_invite_users=bot.can_invite_users,
-            can_delete_messages=bot.can_delete_messages,
-            can_restrict_members=bot.can_restrict_members,
-            can_pin_messages=bot.can_pin_messages,
-            can_promote_members=bot.can_promote_members,
-            can_manage_chat=bot.can_manage_chat,
-            can_manage_voice_chats=bot.can_manage_voice_chats,
+            can_change_info=x.can_change_info,
+            can_invite_users=x.can_invite_users,
+            can_delete_messages=x.can_delete_messages,
+            can_restrict_members=x.can_restrict_members,
+            can_pin_messages=x.can_pin_messages,
+            can_promote_members=x.can_promote_members,
+            can_manage_chat=x.can_manage_chat,
+            can_manage_voice_chats=x.can_manage_voice_chats,
         )
         return await message.reply_text(f"Fully Promoted! {umention}")
 
     await message.chat.promote_member(
         user_id=user_id,
         can_change_info=False,
-        can_invite_users=bot.can_invite_users,
-        can_delete_messages=bot.can_delete_messages,
+        can_invite_users=x.can_invite_users,
+        can_delete_messages=x.can_delete_messages,
         can_restrict_members=False,
         can_pin_messages=False,
         can_promote_members=False,
-        can_manage_chat=bot.can_manage_chat,
-        can_manage_voice_chats=bot.can_manage_voice_chats,
+        can_manage_chat=x.can_manage_chat,
+        can_manage_voice_chats=x.can_manage_voice_chats,
     )
     await message.reply_text(f"Promoted! {umention}")
 
