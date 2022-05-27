@@ -88,7 +88,7 @@ def unpin(_, m: Message):
     else:
        m.reply("`only Dev use this`")
     
-@bot.on_message(filters.command("del") & ~filters.edited & ~filters.private)
+@bot.on_message(filters.command("del"))
 @adminsOnly("can_delete_messages")
 async def deleteFunc(_, message: Message):
     if not message.reply_to_message:
