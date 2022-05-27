@@ -139,7 +139,6 @@ async def purgeFunc(_, message: Message):
 @adminsOnly("can_promote_members")
 async def promote(_, m: Message):
     reply = m.reply_to_message
-    if reply:
     await bot.promote_chat_member(m.chat.id , reply.from_user.id)
     await bot.send_message(m.chat.id ,f"Admin: {m.from_user.mention}\npromoted! {reply.from_user.mention}")
          
