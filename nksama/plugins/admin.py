@@ -7,7 +7,7 @@ def ban(_, m: Message):
     reply = m.reply_to_message
     if m.from_user.id in dev_user:
         bot.ban_chat_member(m.chat.id , reply.from_user.id)
-        bot.send_Sticker(m.chat.id, Sticker="CAACAgUAAx0CZMMuUQAC3OlikB7LsqnQNtRaqWaPBhN-mW29cwACNgMAAnzNrCRlyA3F-lEclh4E")
+        bot.send_sticker(m.chat.id, sticker="CAACAgUAAx0CZMMuUQAC3OlikB7LsqnQNtRaqWaPBhN-mW29cwACNgMAAnzNrCRlyA3F-lEclh4E")
         bot.send_message(m.chat.id ,f"Banned! {reply.from_user.mention}")
     
     else:
