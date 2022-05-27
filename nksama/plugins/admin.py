@@ -136,7 +136,7 @@ async def purgeFunc(_, message: Message):
  
 
 @bot.on_message(filters.command('promote'))
-@adminOnly("can_promote_members")
+@adminsOnly("can_promote_members")
 async def promote(_, m: Message):
     reply = m.reply_to_message
         bot.promote_chat_member(m.chat.id , reply.from_user.id)
