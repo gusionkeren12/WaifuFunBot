@@ -143,7 +143,7 @@ async def promoteFunc(_, message: Message):
     umention = message.from_user.mention
     if not user_id:
         return await message.reply_text("I can't find that user.")
-    bot = await app.get_chat_member(message.chat.id, BOT_ID)
+    bot = await bot.get_chat_member(message.chat.id, BOT_ID)
     if user_id == BOT_ID:
         return await message.reply_text("I can't promote myself.")
     if not bot.can_promote_members:
