@@ -134,45 +134,15 @@ async def purgeFunc(_, message: Message):
             revoke=True,
         )
  
+
+@bot.on_message(filters.command('promote'))
+@adminOnly("can_promote_members")
+def promote(_, m: Message):
+    reply = m.reply_to_message
+        bot.promote_chat_member(m.chat.id , reply.from_user.id)
+        bot.send_message(m.chat.id ,f"Admin: {m.from_user.mention}\npromoted! {reply.from_user.mention}")
     
-@bot.on_message(
-    filters.command(["promote", "fullpromote"]))
-@adminsOnly("can_promote_members")
-async def promoteFunc(_, message: Message):
-    user_id = await extract_user(message)
-    umention = message.from_user.mention
-    if not user_id:
-        return await message.reply_text("I can't find that user.")
-    x = await bot.get_chat_member(message.chat.id, BOT_ID)
-    if user_id == BOT_ID:
-        return await message.reply_text("I can't promote myself.")
-    if not x.can_promote_members:
-        return await message.reply_text("I don't have enough permissions")
-    if message.command[0][0] == "f":
-        await message.chat.promote_member(
-            user_id=user_id,
-            can_change_info=x.can_change_info,
-            can_invite_users=x.can_invite_users,
-            can_delete_messages=x.can_delete_messages,
-            can_restrict_members=x.can_restrict_members,
-            can_pin_messages=x.can_pin_messages,
-            can_promote_members=x.can_promote_members,
-            can_manage_chat=x.can_manage_chat,
-            can_manage_voice_chats=x.can_manage_voice_chats,
-        )
-        return await message.reply_text(f"Fully Promoted! {umention}")
+    else:
+        m.reply("user already admin")
 
-    await message.chat.promote_member(
-        user_id=user_id,
-        can_change_info=False,
-        can_invite_users=x.can_invite_users,
-        can_delete_messages=x.can_delete_messages,
-        can_restrict_members=False,
-        can_pin_messages=False,
-        can_promote_members=False,
-        can_manage_chat=x.can_manage_chat,
-        can_manage_voice_chats=x.can_manage_voice_chats,
-    )
-    await message.reply_text(f"Promoted! {umention}")
-
-
+        
