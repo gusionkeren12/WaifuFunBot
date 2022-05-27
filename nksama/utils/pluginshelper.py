@@ -11,7 +11,7 @@ from sys import executable
 from pyrogram.types import Message
 
 
-from nksama.utils.http import get, post
+from nksama.utils.http import get
 
 async def extract_userid(message, text: str):
     """
