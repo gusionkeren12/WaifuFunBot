@@ -138,9 +138,9 @@ async def purgeFunc(_, message: Message):
 @bot.on_message(
     filters.command(["promote", "fullpromote"]))
 @adminsOnly("can_promote_members")
-async def promoteFunc(bot: app, message: Message):
+async def promoteFunc(_, message: Message):
     user_id = await extract_user(message)
-    umention = (await app.get_users(user_id)).mention
+    umention = message.from_user.mention
     if not user_id:
         return await message.reply_text("I can't find that user.")
     bot = await app.get_chat_member(message.chat.id, BOT_ID)
