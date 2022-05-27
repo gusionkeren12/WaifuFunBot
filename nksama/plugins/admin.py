@@ -1,4 +1,4 @@
-from nksama import bot as app, bot,  dev_user
+from nksama import bot,  dev_user
 from nksama.config import BOT_ID
 from pyrogram import filters
 from pyrogram.types import Message
@@ -6,7 +6,7 @@ from pyrogram.types import Message
 async def member_permissions(chat_id: int, user_id: int):
     perms = []
     try:
-        member = await bot.get_chat_member(chat_id, user_id)
+        member = await app.get_chat_member(chat_id, user_id)
     except Exception:
         return []
     if member.can_post_messages:
@@ -134,12 +134,12 @@ async def purgeFunc(_, message: Message):
         )
  
     
-@app.on_message(
+@bot.on_message(
     filters.command(["promote", "fullpromote"]))
 @adminsOnly("can_promote_members")
 async def promoteFunc(_, message: Message):
     user_id = await extract_user(message)
-    umention = (await app.get_users(user_id)).mention
+    umention = (await bot.get_users(user_id)).mention
     if not user_id:
         return await message.reply_text("I can't find that user.")
     bot = await app.get_chat_member(message.chat.id, BOT_ID)
