@@ -68,7 +68,7 @@ def kick(_, m: Message):
         
         
  
-@bot.on_message(filters.command(["pin", "unpin"]) & ~filters.edited & ~filters.private)
+@bot.on_message(filters.command(["pin", "unpin"]))
 @adminsOnly("can_pin_messages")
 async def pin(_, message: Message):
     if not message.reply_to_message:
