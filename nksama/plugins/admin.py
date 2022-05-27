@@ -126,7 +126,7 @@ async def purgeFunc(_, message: Message):
 
     # Delete if any messages left
     if len(message_ids) > 0:
-        await app.delete_messages(
+        await bot.delete_messages(
             chat_id=chat_id,
             message_ids=message_ids,
             revoke=True,
