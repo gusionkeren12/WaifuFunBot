@@ -1,6 +1,7 @@
 from pyrogram.types import Message
 from pyrogram import filters
 from nksama import bot
+import random
 
 dnote = [ ]
 
@@ -58,18 +59,30 @@ def gn(_, m: Message):
     
 gbam_text = """
 #GBANNED
-froma chat: `{}`
-admin: {}
-user : {}
-reason: {}
-chat count: {}
+**Froma Chat:** `{}`
+**Admin:** {}
+**User :** {}
+**Reason:** `{}`
+**Chat Count:** `{}`
 """
+reason_text = [ "abusing",
+                "spamming",
+                "NSFW Spam",
+                "no respecting",
+                "gban me so I'm gbanned",
+                "aasf friend",
+                "aunty lover",
+                "gang tag",
+                "abuse pfp"
+                "hentai pfp",
+                "trolling" ]
+
 @bot.on_message(filters.command(["gban", "gbam"]))
 async def gbams(_, m: Message):
       reply = m.reply_to_message
       user1 = m.from_user
-      reason = "duck you"
-      count = "15"
+      reason = random.choice(reason_text)
+      count = random.randint(10,30)
       user2 = reply.from_user
       chat = m.chat
       gbam = await m.reply("Gbaning...")
