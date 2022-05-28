@@ -2,6 +2,7 @@ emoji
 nekos.py
 bs4
 aiohttp
+SQLAlchemy
 uvloop
 pyrogram
 pillow
