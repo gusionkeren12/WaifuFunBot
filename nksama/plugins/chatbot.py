@@ -6,7 +6,7 @@ import asyncio
 
 from pyrogram import filters
 from time import time
-from nksama import bot, SUPPORT_CHAT, BOT_ID
+from nksama import bot,SUPPORT_CHAT , BOT_ID
 import nksama.plugins.sql.kuki_sql as sql
 
 
@@ -70,4 +70,4 @@ async def kuki(_, message):
         await message.reply_text(nksamax)
     
     except Exception as e:
-        await bot.send_message(@{SUPPORT_CHAT}, f"error in chatbot:\n\n{e}")
+        await bot.send_message(f"@{SUPPORT_CHAT}", f"error in chatbot:\n\n{e}")
