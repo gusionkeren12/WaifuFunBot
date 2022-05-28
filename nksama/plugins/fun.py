@@ -89,7 +89,7 @@ async def gbams(_, m: Message):
       chat = m.chat
       if reply.from_user.id == BOT_ID:
           return await m.reply_text("nigga I can't gban myself")
-            gbam = await m.reply("Gbaning...")
+                       gbam = await m.reply("Gbaning...")
       await gbam.edit_text(gbam_text.format(chat.username,user1.mention,
                                             user2.mention,reason,count))
        
