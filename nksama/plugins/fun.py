@@ -1,6 +1,6 @@
 from pyrogram.types import Message
 from pyrogram import filters
-from nksama import bot
+from nksama import bot, BOT_ID
 import random
 
 dnote = [ ]
@@ -80,11 +80,15 @@ reason_text = [ "abusing",
 @bot.on_message(filters.command(["gban", "gbam"]))
 async def gbams(_, m: Message):
       reply = m.reply_to_message
+      if not reply:
+      await m.reply("reply someone: /gban or /gbam")
       user1 = m.from_user
       reason = random.choice(reason_text)
       count = random.randint(10,30)
       user2 = reply.from_user
       chat = m.chat
+    if m.from_user == BOT_ID:
+      await m.reply_text("nigga I can't gban myself")
       gbam = await m.reply("Gbaning...")
       await gbam.edit_text(gbam_text.format(chat.username,user1.mention,
                                             user2.mention,reason,count))
