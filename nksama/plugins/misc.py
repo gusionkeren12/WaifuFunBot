@@ -2,11 +2,26 @@ import os
 from pyrogram import filters
 from pyrogram.types import Message
 from gpytranslate import Translator
-from nksama import bot as app, bot, arq
-from nksama.utils.errors import capture_err
-from nksama.utils.http import get
+from nksama import bot
 
 
+@bot.on_message(filters.command(["lang", "langs"]))
+def language(_, m: Message)
+     reply = m.reply_to_message
+            if not reply:
+          await reply("Click on the button below to see the list of supported language codes.",
+        reply_markup=InlineKeyboardMarkup(
+            [
+                [
+                    InlineKeyboardButton(
+                        text="Language codes",
+                        url="https://telegra.ph/Lang-Codes-03-19-3",
+                    ),
+                ],
+            ],
+            disable_web_page_preview=True,
+        ),
+    )
 
 
 trans = Translator()
