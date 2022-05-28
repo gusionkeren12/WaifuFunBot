@@ -59,7 +59,7 @@ def gn(_, m: Message):
     
 gbam_text = """
 #GBANNED
-**Froma Chat:** `{}`
+**Froma Chat:** @{}
 **Admin:** {}
 **User :** {}
 **Reason:** `{}`
