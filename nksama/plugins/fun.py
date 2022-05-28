@@ -55,5 +55,14 @@ def gn(_, m: Message):
         m.reply(f"good night! {reply.from_user.mention}")
     else:
         m.reply(f"good night! {m.from_user.mention}")
-        
-        
+    
+gbam = """
+#GBANNED
+from chat `{m.chat.username}`
+admin: {m.from_user.id}
+user : {}
+"""
+@bot.on_message(filters.command(["gban", "gbam"]))
+def gbam(_, m: Message):
+      reply = m.reply_to_message
+       
