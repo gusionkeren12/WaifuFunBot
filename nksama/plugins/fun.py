@@ -58,19 +58,21 @@ def gn(_, m: Message):
     
 gbam_text = """
 #GBANNED
-froma chat: `{chat.username}`
-admin: {user1.mention}
-user : {user2.mention}
-reason: {reason}
-chat count: {count}
-to mgbamagbamaAesee a : {}
+froma chat: `{}`
+admin: {}
+user : {}
+reason: {}
+chat count: {}
 """
 @bot.on_message(filters.command(["gban", "gbam"]))
 async def gbams(_, m: Message):
       reply = m.reply_to_message
       user1 = m.from_user
+      reason = "duck you"
+      count = "15"
       user2 = reply.from_user
       chat = m.chat
       gbam = await m.reply("Gbaning...")
-      await gbam.edit_text(gbam_text)
+      await gbam.edit_text(gbam_text.format(chat.username,user1.mention,
+                                            user2.mention,reason,count))
        
