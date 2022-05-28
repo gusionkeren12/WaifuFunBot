@@ -81,13 +81,13 @@ reason_text = [ "abusing",
 async def gbams(_, m: Message):
       reply = m.reply_to_message
       if not reply:
-       return await m.reply("reply someone: /gban or /gbam")
+       return await m.reply("reply someone:\n/gban or /gbam")
       user1 = m.from_user
       reason = random.choice(reason_text)
       count = random.randint(10,30)
       user2 = reply.from_user
       chat = m.chat
-      if reply.from_user == BOT_ID:
+      if reply.from_user BOT_ID:
            await m.reply_text("nigga I can't gban myself")
       gbam = await m.reply("Gbaning...")
       await gbam.edit_text(gbam_text.format(chat.username,user1.mention,
