@@ -1,5 +1,7 @@
 import os
 from pyrogram import filters
+from pyrogram.types.bots_and_keyboards.inline_keyboard_button import InlineKeyboardButton
+from pyrogram.types.bots_and_keyboards.inline_keyboard_markup import InlineKeyboardMarkup
 from pyrogram.types import Message
 from gpytranslate import Translator
 from nksama import bot
@@ -7,9 +9,7 @@ from nksama import bot
 
 @bot.on_message(filters.command(["lang", "langs"]))
 def language(_, m: Message)
-     reply = m.reply_to_message
-            if not reply:
-          await reply("Click on the button below to see the list of supported language codes.",
+       await m.reply("Click on the button below to see the list of supported language codes.",
         reply_markup=InlineKeyboardMarkup(
             [
                 [
