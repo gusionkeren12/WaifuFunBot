@@ -66,11 +66,11 @@ chat count: {count}
 to mgbamagbamaAesee a : {}
 """
 @bot.on_message(filters.command(["gban", "gbam"]))
-def gbam(_, m: Message):
+def async gbams(_, m: Message):
       reply = m.reply_to_message
       user1 = m.from_user
       user2 = reply.from_user
       chat = m.chat
       gbam = await m.reply("Gbaning...")
-       gbam.edit_text(gbam_text)
+       await gbam.edit_text(gbam_text)
        
