@@ -72,5 +72,5 @@ def gbam(_, m: Message):
       user2 = reply.from_user
       chat = m.chat
       gbam = await m.reply("Gbaning...")
-              await gbam.edit_text(gbam_text)
+             await gbam.edit_text(gbam_text)
        
