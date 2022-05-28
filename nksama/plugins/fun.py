@@ -70,7 +70,7 @@ reason_text = [ "abusing",
                 "NSFW Spam",
                 "no respecting",
                 "gban me so I'm gbanned",
-                "aasf friend",
+                "hate speech",
                 "aunty lover",
                 "gang tag",
                 "abuse pfp"
@@ -89,6 +89,7 @@ async def gbams(_, m: Message):
       chat = m.chat
       if reply.from_user.id == BOT_ID:
            await m.reply_text("nigga I can't gban myself")
+        if reply:
       gbam = await m.reply("Gbaning...")
       await gbam.edit_text(gbam_text.format(chat.username,user1.mention,
                                             user2.mention,reason,count))
