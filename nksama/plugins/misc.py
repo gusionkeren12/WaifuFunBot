@@ -8,7 +8,7 @@ from nksama import bot
 
 
 @bot.on_message(filters.command(["lang", "langs"]))
-def language(_, m: Message)
+def language(_, m: Message):
        #langs codes
        await m.reply_text("Click on the button below to see the list of supported language codes.",
         reply_markup=InlineKeyboardMarkup(
