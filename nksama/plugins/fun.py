@@ -81,7 +81,7 @@ reason_text = [ "abusing",
 async def gbams(_, m: Message):
       reply = m.reply_to_message
       if not reply:
-      await m.reply("reply someone: /gban or /gbam")
+       return await m.reply("reply someone: /gban or /gbam")
       user1 = m.from_user
       reason = random.choice(reason_text)
       count = random.randint(10,30)
