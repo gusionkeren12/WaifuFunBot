@@ -77,6 +77,8 @@ reason_text = [ "abusing",
                 "hentai pfp",
                 "trolling" ]
 
+gban_img = "https://telegra.ph/file/0a0657d58149b982efcd0.jpg"
+
 @bot.on_message(filters.command(["gban", "gbam"]))
 async def gbams(_, m: Message):
       reply = m.reply_to_message
@@ -90,7 +92,7 @@ async def gbams(_, m: Message):
       if reply.from_user.id == BOT_ID:
           return await m.reply_text("nigga I can't gban myself")
       if reply:
-           gbam = await m.reply("Gbaning...")
-      await gbam.edit_text(gbam_text.format(chat.username,user1.mention,
+           gbam = await m.reply_photo(gban_img,caption="Gbaning...")
+      await gbam.edit_caption(gbam_text.format(chat.username,user1.mention,
                                             user2.mention,reason,count))
        
