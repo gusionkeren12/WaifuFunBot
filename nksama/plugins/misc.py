@@ -20,7 +20,6 @@ def language(_, m: Message):
                     ),
                 ],
             ],
-            disable_web_page_preview=True,
         ),
     )
 
