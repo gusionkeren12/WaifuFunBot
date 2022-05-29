@@ -17,3 +17,4 @@ motor
 tracemoepy
 gpytranslate
 jikanpy
+python-telegram-bot==20.0a0
