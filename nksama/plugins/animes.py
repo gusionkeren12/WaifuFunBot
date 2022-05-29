@@ -16,6 +16,9 @@ async def character(_, msg: Message):
     res = ""
     query = msg.text.split(None, 1)[1]
     search = jikan.search("character", query).get("results")[0].get("mal_id")
+    except APIException:
+    await msg.reply_text("Error connecting to the API. Please try again!")
+        return ""
     res = jikan.character(search)
     if res:
         name = res.get("name")
