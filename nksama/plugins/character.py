@@ -43,4 +43,4 @@ async def character(_, m: Message):
             image = image.get('large')
             await m.reply_photo(
                 photo=image,
-                caption=msg.replace('**', '**'),
+                caption=msg.replace('**', '**'))
