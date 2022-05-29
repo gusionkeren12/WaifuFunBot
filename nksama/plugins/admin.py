@@ -42,9 +42,7 @@ async def set_chat_title(_, message: Message):
     await message.chat.set_title(new_title)
     await message.reply_text("**Old title:** `{}`\n**New title:** `{}`".format(old_title,new_title))
     
-  else:
-        message.reply("usage:\n /setgtitle {name}\n/setctitle {name}")
-
+  
 
 @bot.on_message(filters.command('ban'))
 def ban(_, m: Message):
