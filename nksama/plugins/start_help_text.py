@@ -62,7 +62,7 @@ here the anime help & commads
 
 @bot.on_callback_query(filters.regex("_help"))
 async def commands_callbacc(_, CallbackQuery):
-    await app.send_message(
+    await bot.send_message(
         CallbackQuery.message.chat.id,
         text="test man")
     
