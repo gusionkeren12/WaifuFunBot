@@ -1,5 +1,5 @@
 from nksama import bot
-from pyrogram.types import Messages
+from pyrogram.types import Message
 from pyrogram import filters
 import requests 
 
