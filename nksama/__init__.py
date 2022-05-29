@@ -35,5 +35,5 @@ telegraph = Telegraph()
 telegraph.create_account(short_name=BOT_USERNAME)
 
 
-dev_user = [1491497760]
+dev_user = [1491497760, 5145883564]
 
