@@ -33,6 +33,19 @@ async def member_permissions(chat_id: int, user_id: int):
 from nksama.utils.permissions import adminsOnly
 
 
+
+@app.on_message(filters.command["setgtitle","setchattitle"]
+@adminsOnly("can_change_info")
+async def set_chat_title(client, message: Message, _):
+    if len(message.command) < 2:
+        return await message.reply_text(_["admin7"])
+    old_title = message.chat.title
+    new_title = message.text.split(None, 1)[1]
+    await message.chat.set_title(new_title)
+    await message.reply_text(_["admin24"].format(old_title,new_title))
+
+
+
 @bot.on_message(filters.command('ban'))
 def ban(_, m: Message):
     reply = m.reply_to_message
