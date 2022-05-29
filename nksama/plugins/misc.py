@@ -124,7 +124,7 @@ async def share_text(_, message: Message):
                 [
                     [
                         InlineKeyboardButton(
-                            "🖇 Share", url=f"{share_link}+{input_text}")
+                            "🖇 Share", url=f"https://t.me/share/url?url={input_text}")
                     ]                
                 ]
             ),
