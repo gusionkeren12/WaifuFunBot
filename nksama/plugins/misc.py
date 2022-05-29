@@ -86,13 +86,13 @@ async def jsonify(_, message):
        
 @bot.on_message(filters.command("ud"))
 async def ud(_, message: Message):
-    text = message.text.split(None, 1)[1]
-    results = requests.get(
+        text = message.text.split(None, 1)[1]
+        results = requests.get(
         f'https://api.urbandictionary.com/v0/define?term={text}').json()
-    reply_text = f'**results: {text}**\n\n{results["list"][0]["definition"]}\n\n_{results["list"][0]["example"]}_'
-    await bot.send_message(reply_text)
-    else:
-        m.reply("`only Dev use this`")
+        reply_text = f'**results: {text}**\n\n{results["list"][0]["definition"]}\n\n_{results["list"][0]["example"]}_'
+        await bot.send_message(m.chat.id,reply_text)
+   else:
+        bot.send_message(m.chat.id,"`only Dev use this`")
 
 
 
