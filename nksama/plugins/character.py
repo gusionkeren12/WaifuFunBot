@@ -32,8 +32,8 @@ async def character(_, m: Message):
             'query': character_query,
             'variables': variables
         }).json()
-     if json:
-        json = json['data']['Character']
+        if json:
+             json = json['data']['Character']
         msg = f"*{json.get('name').get('full')}*(`{json.get('name').get('native')}`)\n"
         description = f"{json['description']}"
         site_url = json.get('siteUrl')
