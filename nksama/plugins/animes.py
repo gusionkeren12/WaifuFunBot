@@ -17,18 +17,9 @@ jikan = Jikan()
 @bot.on_message(filters.command("character"))
 async def character(_, msg: Message):
     res = ""
-    query = msg.text.split(None, 1)[1]
-    try:
-        search = jikan.search("character", query).get("results")[0].get("mal_id")
-    except APIException:
-        await msg.reply_text("No results found!")
-        return ""
-    if search:
-        try:
-            res = jikan.character(search)
-        except APIException:
-            await msg.reply_text("Error connecting to the API. Please try again!")
-            return ""
+    query = m.text.split(None, 1)[1]
+    search = jikan.search("character", query).get("results")[0].get("mal_id")
+    res = jikan.character(search)
     if res:
         name = res.get("name")
         kanji = res.get("name_kanji")
