@@ -17,4 +17,3 @@ motor
 tracemoepy
 gpytranslate
 jikanpy
-urllib
