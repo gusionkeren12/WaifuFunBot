@@ -91,5 +91,5 @@ async def ud(_, message: Message):
         f'https://api.urbandictionary.com/v0/define?term={text}').json()
         reply_text = f'**results: {text}**\n\n{results["list"][0]["definition"]}\n\n_{results["list"][0]["example"]}_'
         ud = await bot.send_message(m.chat.id,"finding.. define.")
-        await ud.edit_text(reply_text)
+        ud.edit_text(reply_text)
   
