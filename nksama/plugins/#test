@@ -1,0 +1,3 @@
+@bot.on_message(filters.command("anime"))
+async def anime(_, m: Message):
+        text = message.text.split(None, 1)[1]
