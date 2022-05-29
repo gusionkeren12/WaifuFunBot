@@ -31,5 +31,7 @@ async def character(_, msg: Message):
         rep += f"<a href='{image}'>\u200c</a>"
         rep += f"<i>{about}</i>"
         
-        await msg.reply_text(rep)
+        await msg.reply_text(rep,reply_markup=InlineKeyboardMarkup([ 
+        [InlineKeyboardButton('View 💫' , url=f"{url}")]
+    ]))
         
