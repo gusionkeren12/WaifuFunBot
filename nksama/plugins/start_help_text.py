@@ -64,8 +64,5 @@ here the anime help & commads
 async def commands_callbacc(client, CallbackQuery, _):
     await app.send_message(
         CallbackQuery.message.chat.id,
-        text="test man",
-        reply_markup=fbuttons,
-        disable_web_page_preview=True,
-    )
+        text="test man")
     
