@@ -42,7 +42,7 @@ async def set_chat_title(client, message: Message, _):
     old_title = message.chat.title
     new_title = message.text.split(None, 1)[1]
     await message.chat.set_title(new_title)
-    await message.reply_text(_["admin24"].format(old_title,new_title))
+    await message.reply_text("chat Old title: {}\nChat New title: {}".format(old_title,new_title))
 
 
 
