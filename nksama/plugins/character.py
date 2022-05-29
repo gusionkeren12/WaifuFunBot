@@ -20,7 +20,7 @@ url = 'https://graphql.anilist.co'
 
 @bot.on_message(filters.command("character"))
 async def character(_, m: Message):
-        text = m.text.split(None, 1)[1]
+        search = m.text.split(None, 1)[1]
         variables = {'search': search}
     json = requests.post(
         url, json={
