@@ -8,9 +8,6 @@ import re
 
 from jikanpy import Jikan
 from jikanpy.exceptions import APIException
-from telegram import Chat, InlineKeyboardButton, InlineKeyboardMarkup, Update
-from telegram.ext import CallbackContext, CallbackQueryHandler
-from telegram.constants import ParseMode
 
 jikan = Jikan()
 
@@ -33,10 +30,6 @@ async def character(_, msg: Message):
         rep = f"<b>{name} ({kanji})</b>\n\n"
         rep += f"<a href='{image}'>\u200c</a>"
         rep += f"<i>{about}</i>"
-        keyb = [
-            [InlineKeyboardButton("More Information", url=url),
-           InlineKeyboardButton("Add to favorite character", callback_data=f"xanime_fvrtchar={name}")]]
-        
         
         await msg.reply_text(rep)
         
