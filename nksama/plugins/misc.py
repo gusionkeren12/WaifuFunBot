@@ -118,8 +118,7 @@ async def share_text(_, message: Message):
                     ]                
                 ]
             ),
-            reply_to_message.id=reply.id
         )
         return
-    await message.reply_text(share_link(input_text), reply_to_message.id==reply.id)
+    await message.reply_text(share_link(input_text))
         
