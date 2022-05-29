@@ -1,9 +1,26 @@
+character_query = """
+    query ($query: String) {
+        Character (search: $query) {
+               id
+               name {
+                     first
+                     last
+                     full
+               }
+               siteUrl
+               image {
+                        large
+               }
+               description
+        }
+    }
+"""
 
 url = 'https://graphql.anilist.co'
 
-@bot.on_message(filters.command("anime"))
-async def anime(_, m: Message):
-        text = message.text.split(None, 1)[1]
+@bot.on_message(filters.command("character"))
+async def character(_, m: Message):
+        text = m.text.split(None, 1)[1]
         variables = {'search': search}
     json = requests.post(
         url, json={
@@ -19,6 +36,6 @@ async def anime(_, m: Message):
         image = json.get('image', None)
         if image:
             image = image.get('large')
-            update.effective_message.reply_photo(
+            await m.reply_photo(
                 photo=image,
-                caption=msg.replace('<b>', '</b>'),
+                caption=msg.replace('**', '**'),
