@@ -120,13 +120,4 @@ async def share_text(_, message: Message):
             ),
         )
         return
-    await message.reply_text(share_link(input_text),reply_markup=InlineKeyboardMarkup(
-                [
-                    [
-                        InlineKeyboardButton(
-                            "🖇 Share", url=f"https://t.me/share/url?url={input_text}")
-                    ]                
-                ]
-            ),
-        )
-        
+    await message.reply_text(share_link(input_text)
