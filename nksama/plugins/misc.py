@@ -5,7 +5,7 @@ from pyrogram.types.bots_and_keyboards.inline_keyboard_button import InlineKeybo
 from pyrogram.types.bots_and_keyboards.inline_keyboard_markup import InlineKeyboardMarkup
 from pyrogram.types import Message
 from gpytranslate import Translator
-from nksama import bot
+from nksama import bot, SUPPORT_CHAT
 from urllib.parse import quote
 
 
@@ -98,7 +98,7 @@ async def ud(_, message: Message):
 def share_link(text: str) -> str:
     return "**Here is Your Sharing Text 👇**\n\nhttps://t.me/share/url?url=" + quote(text)
 
-@bot.on_message(filters.command(("share"))
+@bot.on_message(filters.command("share"))
 async def share_text(_, message: Message):
     reply = message.reply_to_message
     reply_id = message.reply_to_message.id if message.reply_to_message else message.id
@@ -118,8 +118,8 @@ async def share_text(_, message: Message):
                     ]                
                 ]
             ),
-            reply_to_message_id=reply_id
+            reply_to_message.id=reply.id
         )
         return
-    await message.reply_text(share_link(input_text), reply_to_message.id=reply_id)
+    await message.reply_text(share_link(input_text), reply_to_message.id=reply.id)
         
