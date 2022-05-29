@@ -92,7 +92,7 @@ async def ud(_, message: Message):
     reply_text = f'**results: {text}**\n\n{results["list"][0]["definition"]}\n\n_{results["list"][0]["example"]}_'
     await message.reply_text(reply_text)
        
-else:
-     message.reply("Not Found!")
+     else:
+         message.reply("Not Found!")
 
 
