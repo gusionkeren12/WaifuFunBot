@@ -65,17 +65,7 @@ gbam_text = """
 **Reason:** `{}`
 **Chat Count:** `{}`
 """
-reason_text = [ "abusing",
-                "spamming",
-                "NSFW Spam",
-                "no respecting",
-                "self promotion in SupChat",
-                "hate speech",
-                "aunty lover",
-                "gang tag",
-                "abuse pfp"
-                "hentai pfp",
-                "trolling" ]
+
 
 gban_img = "https://telegra.ph/file/0a0657d58149b982efcd0.jpg"
 
@@ -85,7 +75,7 @@ async def gbams(_, m: Message):
       if not reply:
        return await m.reply("reply someone:\n/gban or /gbam")
       user1 = m.from_user
-      reason = random.choice(reason_text)
+      reason = m.text.split(None, 1)[1]
       count = random.randint(10,30)
       user2 = reply.from_user
       chat = m.chat
