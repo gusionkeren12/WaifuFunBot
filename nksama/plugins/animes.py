@@ -17,7 +17,7 @@ jikan = Jikan()
 @bot.on_message(filters.command("character"))
 async def character(_, msg: Message):
     res = ""
-    query = m.text.split(None, 1)[1]
+    query = msg.text.split(None, 1)[1]
     search = jikan.search("character", query).get("results")[0].get("mal_id")
     res = jikan.character(search)
     if res:
