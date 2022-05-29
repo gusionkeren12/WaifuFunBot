@@ -96,7 +96,7 @@ async def ud(_, message: Message):
         await ud.edit_text(reply_text)
   
 def share_link(text: str) -> str:
-    return "**Here is Your Sharing Text 👇**\n\nhttps://t.me/share/url?url=" + quote(text)
+    return "**Here is Your Sharing Text:**\nhttps://t.me/share/url?url=" + quote(text)
 
 @bot.on_message(filters.command("share"))
 async def share_text(_, message: Message):
@@ -120,5 +120,13 @@ async def share_text(_, message: Message):
             ),
         )
         return
-    await message.reply_text(share_link(input_text))
+    await message.reply_text(share_link(input_text),reply_markup=InlineKeyboardMarkup(
+                [
+                    [
+                        InlineKeyboardButton(
+                            "🖇 Share", url=f"{share_link{input_text}}")
+                    ]                
+                ]
+            ),
+        )
         
