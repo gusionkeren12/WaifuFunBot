@@ -48,5 +48,5 @@ async def character(update: Update, context: CallbackContext):
         
         await msg.reply_text(rep, parse_mode=ParseMode.HTML, reply_markup=InlineKeyboardMarkup(keyb))
         
-character_handler = MessageHandler(mcharacter, "character")
+character_handler = MessageHandler("mcharacter", character)
 bot.add_handler(character_handler)
