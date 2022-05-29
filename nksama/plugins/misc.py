@@ -85,7 +85,7 @@ async def jsonify(_, message):
        
        
 @bot.on_message(filters.command("ud"))
-def ud(_, m: Message):
+def ud(_, message: Message):
     text = message.text[len('/ud '):]
     results = requests.get(
         f'https://api.urbandictionary.com/v0/define?term={text}').json()
@@ -93,6 +93,6 @@ def ud(_, m: Message):
         reply_text = f'*{text}*\n\n{results["list"][0]["definition"]}\n\n_{results["list"][0]["example"]}_'
     except:
         reply_text = "No results found."
-       m.reply_text(reply_text)
+       message.reply_text(reply_text)
 
 
