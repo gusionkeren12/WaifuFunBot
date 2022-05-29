@@ -1,3 +1,8 @@
+from nksama import bot
+from pyrogram.types import Messages
+from pyrogram import filters
+import requests 
+
 character_query = """
     query ($query: String) {
         Character (search: $query) {
@@ -22,7 +27,7 @@ url = 'https://graphql.anilist.co'
 async def character(_, m: Message):
         search = m.text.split(None, 1)[1]
         variables = {'search': search}
-    json = requests.post(
+        json = requests.post(
         url, json={
             'query': character_query,
             'variables': variables
