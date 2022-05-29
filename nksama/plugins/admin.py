@@ -34,7 +34,7 @@ from nksama.utils.permissions import adminsOnly
 
 
 
-@bot.on_message(filters.command["setgtitle","setchattitle"]
+@bot.on_message(filters.command(["setgtitle","setchattitle"]))
 @adminsOnly("can_change_info")
 async def set_chat_title(client, message: Message, _):
     if len(message.command) < 2:
