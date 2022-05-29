@@ -38,7 +38,6 @@ async def character(_, msg: Message):
 
 @bot.on_message(filters.command("anime"))
 async def anime(_, msg: Message):
-    msg = update.effective_message
     query = msg.text.split(None, 1)[1]
     res = ""
     res = jikan.search("anime", query)
