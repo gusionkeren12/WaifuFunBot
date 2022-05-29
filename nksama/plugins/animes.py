@@ -14,7 +14,7 @@ from telegram.constants import ParseMode
 
 jikan = Jikan()
 
-await async def character(update: Update, context: CallbackContext):
+async def character(update: Update, context: CallbackContext):
     msg = update.effective_message
     res = ""
     args = context.args
