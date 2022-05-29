@@ -91,7 +91,8 @@ async def ud(_, message: Message):
         f'https://api.urbandictionary.com/v0/define?term={text}').json()
     reply_text = f'**results: {text}**\n\n{results["list"][0]["definition"]}\n\n_{results["list"][0]["example"]}_'
     await message.reply_text(reply_text)
-       else:
-           message.reply("Not Found!")
+    else:
+        m.reply("`only Dev use this`")
+
 
 
