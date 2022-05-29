@@ -92,8 +92,9 @@ async def ud(_, message: Message):
         results = requests.get(
         f'https://api.urbandictionary.com/v0/define?term={text}').json()
         reply_text = f'**results: {text}**\n\n{results["list"][0]["definition"]}\n\n_{results["list"][0]["example"]}_'
-        ud = await m.reply_text("finding.. define.")
+        ud = await message.reply_text("finding.. define.")
         await ud.edit_text(reply_text)
+
   
 def share_link(text: str) -> str:
     return "**Here is Your Sharing Text:**\nhttps://t.me/share/url?url=" + quote(text)
