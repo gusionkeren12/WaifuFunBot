@@ -89,7 +89,9 @@ def ud(_, message: Message):
     text = message.text.split(None, 1)[1]
     results = requests.get(
         f'https://api.urbandictionary.com/v0/define?term={text}').json()
-    reply_text = f'**{text}**\n\n{results["list"][0]["definition"]}\n\n_{results["list"][0]["example"]}_'
+    reply_text = f'**results: {text}**\n\n{results["list"][0]["definition"]}\n\n_{results["list"][0]["example"]}_'
     message.reply_text(reply_text)
+  else:
+       message.reply("Not Found!")
 
 
