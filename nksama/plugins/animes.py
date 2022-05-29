@@ -38,5 +38,5 @@ async def character(_, msg: Message):
            InlineKeyboardButton("Add to favorite character", callback_data=f"xanime_fvrtchar={name}")]]
         
         
-        await msg.reply_text(rep, parse_mode=ParseMode.HTML, reply_markup=InlineKeyboardMarkup(keyb))
+        await msg.reply_text(rep, reply_markup=InlineKeyboardMarkup(keyb))
         
