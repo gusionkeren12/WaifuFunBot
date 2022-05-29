@@ -1,4 +1,5 @@
 import os
+import requests
 from pyrogram import filters
 from pyrogram.types.bots_and_keyboards.inline_keyboard_button import InlineKeyboardButton
 from pyrogram.types.bots_and_keyboards.inline_keyboard_markup import InlineKeyboardMarkup
@@ -81,3 +82,17 @@ async def jsonify(_, message):
             reply_to_message_id=reply_to_id,
         )
         os.remove("json.text")
+       
+       
+@bot.on_message(filters.command("ud"))
+def ud(_, m: Message):
+    text = message.text[len('/ud '):]
+    results = requests.get(
+        f'https://api.urbandictionary.com/v0/define?term={text}').json()
+    try:
+        reply_text = f'*{text}*\n\n{results["list"][0]["definition"]}\n\n_{results["list"][0]["example"]}_'
+    except:
+        reply_text = "No results found."
+       m.reply_text(reply_text)
+
+
