@@ -83,3 +83,18 @@ async def anime(_, msg: Message):
     rep += f"<i>{synopsis}</i>\n"
     
     await msg.reply_text(rep)
+    
+    
+@bot.on_message(filters.command("upcoming"))
+async def upcoming(_, msg: Message):
+    rep = "<b>Upcoming anime</b>\n"
+    later = jikan.season_later()
+    anime = later.get("anime")
+    for new in anime:
+        name = new.get("title")
+        url = new.get("url")
+        rep += f"➛ <a href='{url}'>{name}</a>\n"
+        if len(rep) > 2000:
+            break
+    await msg.reply_text(rep)
+    
