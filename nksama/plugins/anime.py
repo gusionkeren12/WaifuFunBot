@@ -141,4 +141,13 @@ def pat(_,message):
     else:
         message.reply_animation(url)
 
-        
+
+    
+@bot.on_message(filters.command('meme'))
+def meme(_,message):
+    reply = message.reply_to_message
+    if reply:
+        res = requests.get('https://some-random-api.ml/meme').json()
+        url = res['image']
+        text = res['caption']
+        reply.reply_photo(photo=url, caption=text)
