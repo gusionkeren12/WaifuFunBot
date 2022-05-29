@@ -6,6 +6,8 @@ from pyrogram.types.bots_and_keyboards.inline_keyboard_markup import InlineKeybo
 from pyrogram.types import Message
 from gpytranslate import Translator
 from nksama import bot
+from urllib.parse import quote
+
 
 
 @bot.on_message(filters.command(["lang", "langs"]))
@@ -93,3 +95,31 @@ async def ud(_, message: Message):
         ud = await bot.send_message(message.chat.id,"finding.. define.")
         await ud.edit_text(reply_text)
   
+def share_link(text: str) -> str:
+    return "**Here is Your Sharing Text 👇**\n\nhttps://t.me/share/url?url=" + quote(text)
+
+@bot.on_message(filters.command(("share"))
+async def share_text(_, message: Message):
+    reply = message.reply_to_message
+    reply_id = message.reply_to_message.id if message.reply_to_message else message.id
+    input_split = message.text.split(None, 1)
+    if len(input_split) == 2:
+        input_text = input_split[1]
+    elif reply and (reply.text or reply.caption):
+        input_text = reply.text or reply.caption
+    else:
+        await message.reply_text(
+            text=f"**Notice:**\n\n1. Reply Any Messages.\n2. No Media Support\n\n**Any Question Join Support Chat**",
+            reply_markup=InlineKeyboardMarkup(
+                [
+                    [
+                        InlineKeyboardButton(
+                            "Support Chat", url=f"https://t.me/{SUPPORT_CHAT}")
+                    ]                
+                ]
+            ),
+            reply_to_message_id=reply_id
+        )
+        return
+    await message.reply_text(share_link(input_text), reply_to_message.id=reply_id)
+        
