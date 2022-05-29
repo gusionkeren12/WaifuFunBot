@@ -14,11 +14,10 @@ from telegram.constants import ParseMode
 
 jikan = Jikan()
 
-async def character(update: Update, context: CallbackContext):
-    msg = update.effective_message
+@bot.on_message(filters.command("character"))
+async def character(_, msg: Message):
     res = ""
-    args = context.args
-    query = " ".join(args)
+    query = m.text.split(None, 1)[1]
     try:
         search = jikan.search("character", query).get("results")[0].get("mal_id")
     except APIException:
@@ -50,5 +49,3 @@ async def character(update: Update, context: CallbackContext):
         
         await msg.reply_text(rep, parse_mode=ParseMode.HTML, reply_markup=InlineKeyboardMarkup(keyb))
         
-character_handler = MessageHandler(character)
-bot.add_handler(character_handler)
