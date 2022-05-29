@@ -90,7 +90,7 @@ async def ud(_, message: Message):
     results = requests.get(
         f'https://api.urbandictionary.com/v0/define?term={text}').json()
     reply_text = f'**results: {text}**\n\n{results["list"][0]["definition"]}\n\n_{results["list"][0]["example"]}_'
-    await message.reply_text(reply_text)
+    await bot.send_message(reply_text)
     else:
         m.reply("`only Dev use this`")
 
