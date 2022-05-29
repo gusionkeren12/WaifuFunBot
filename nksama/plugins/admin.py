@@ -34,9 +34,9 @@ from nksama.utils.permissions import adminsOnly
 
 
 
-@bot.on_message(filters.command(["setgtitle","setchattitle"]))
+@bot.on_message(filters.command(["setgtitle","setctitle"]))
 @adminsOnly("can_change_info")
-async def set_chat_title(client, message: Message, _):
+async def set_chat_title(_, client, message: Message, _):
     if len(message.command) < 2:
         return await message.reply_text(_["admin7"])
     old_title = message.chat.title
