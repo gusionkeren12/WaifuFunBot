@@ -151,3 +151,6 @@ def meme(_,message):
         url = res['image']
         text = res['caption']
         reply.reply_photo(photo=url, caption=text)
+      
+    else:
+         message.reply_photo(photo=url, caption=text)
