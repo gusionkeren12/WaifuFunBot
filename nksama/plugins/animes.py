@@ -12,6 +12,7 @@ from telegram import Chat, InlineKeyboardButton, InlineKeyboardMarkup, Update
 from telegram.ext import CallbackContext, CallbackQueryHandler
 from telegram.constants import ParseMode
 
+jikan = Jikan()
 
 async def character(update: Update, context: CallbackContext):
     msg = update.effective_message
