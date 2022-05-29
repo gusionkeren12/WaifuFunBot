@@ -2,6 +2,7 @@ from nksama import bot
 from pyrogram import *
 from pyrogram.types import *
 
+from pyrogram.handlers import MessageHandler
 
 import re
 
