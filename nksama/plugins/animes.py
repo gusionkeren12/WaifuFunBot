@@ -139,7 +139,7 @@ async def quote(_, message: Message):
     quote = res['quote']
 
     rep = f"**Anime** - `{anime}`\n"
-    rep += f"**Character** - `{character}\n"
-    rep += f"**Quote** - {quote}"
+    rep += f"**Character** - `{character}`\n"
+    rep += f"**Quote** - `{quote}`"
     
     await message.reply_text(rep)
