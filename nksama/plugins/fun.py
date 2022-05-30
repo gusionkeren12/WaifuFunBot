@@ -53,7 +53,7 @@ async def gbams(_, m: Message):
        
 @bot.on_message(filters.command('meme'))
 def meme(_,message: Message):
-        res = requests.get('https://some-random-api.ml/meme').json()
+      res = requests.get('https://some-random-api.ml/meme').json()
         url = res['image']
         text = res['caption']
         message.reply_photo(photo=url, caption=text)
@@ -64,3 +64,8 @@ def joke(_, message: Message):
         res = requests.get('https://some-random-api.ml/joke').json()
         text = res['joke']
         message.reply_text(text)
+        
+@bot.on_message(filters.command("tickle"))
+def tickle (_, message: Message):
+        res = requests.get('https://nekos.best/tickle').json()
+ 
