@@ -138,10 +138,8 @@ async def quote(_, message: Message):
     character = res['character']
     quote = res['quote']
 
-quotes = """
-**Anime** - `{}`
-**Character** - `{}`
-**quote** - `{}`
-"""
+    rep = f"**Anime** - `{anime}`\n"
+    rep += f"**Character** - `{character}\n"
+    rep += f"**quote** - {quote}"
 
-  await message.reply_text(quotes.format(anime, character, quote))
+  await message.reply_text(rep)
