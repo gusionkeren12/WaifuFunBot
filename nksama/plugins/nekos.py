@@ -149,5 +149,5 @@ def slap(_, message: Message):
         url = res["url"]
         reply.reply_animation(url)
         
-      else:
+    else:
           message.reply_animation(url)
