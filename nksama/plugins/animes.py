@@ -141,5 +141,5 @@ async def quote(_, message: Message):
     rep = f"**Anime** - `{anime}`\n"
     rep += f"**Character** - `{character}\n"
     rep += f"**quote** - {quote}"
-
-  await message.reply_text(rep)
+    
+    await message.reply_text(rep)
