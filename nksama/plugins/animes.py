@@ -130,3 +130,18 @@ async def manga(_, msg: Message):
         rep += f"<i>{synopsis}</i>"
         
         await msg.reply_text(rep)
+
+@bot.on_message(filters.command(["quote","animequote","quotes"]))
+async def quote(_, message: Message):
+    res = requests.get("https://animechan.vercel.app/api/random").json()
+    anime = res['anime']
+    character = res['character']
+    quote = res['quote']
+
+quotes = """
+**Anime** - `{}`
+**Character** - `{}`
+**quote** - `{}`
+"""
+
+  await message.reply_text(quotes.format(anime, character, quote))
