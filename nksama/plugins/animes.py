@@ -5,7 +5,7 @@ from pyrogram.types import *
 from pyrogram.handlers import MessageHandler
 
 import re
-
+import requests
 from jikanpy import Jikan
 from jikanpy.exceptions import APIException
 
