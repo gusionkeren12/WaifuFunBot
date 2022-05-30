@@ -68,4 +68,5 @@ def joke(_, message: Message):
 @bot.on_message(filters.command("tickle"))
 def tickle (_, message: Message):
         res = requests.get('https://nekos.best/tickle').json()
- 
+        tickle = res['tickle']
+        message.reply_animation(tickle)
