@@ -144,13 +144,11 @@ def pat(_,message):
 
     
 @bot.on_message(filters.command('meme'))
-def meme(_,message):
-    reply = message.reply_to_message
-    if reply:
+def meme(_,message: Message):
         res = requests.get('https://some-random-api.ml/meme').json()
         url = res['image']
         text = res['caption']
-        reply.reply_photo(photo=url, caption=text)
+        message.reply_photo(photo=url, caption=text)
+
       
-    else:
-         message.reply_photo(photo=url, caption=text)
+ @bot.on_message(filters.command("joke"))
