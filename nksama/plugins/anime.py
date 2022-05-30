@@ -152,3 +152,8 @@ def meme(_,message: Message):
 
       
  @bot.on_message(filters.command("joke"))
+def joke(_, message: Message):
+        res = requests.get('https://some-random-api.ml/joke').json()
+        url = res['image']
+        text = res['caption']
+        message.reply_photo(photo=url, caption=text)
