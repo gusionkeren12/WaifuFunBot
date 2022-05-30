@@ -145,7 +145,7 @@ def pat(_,message):
 def slap(_, message: Message):
     reply = message.reply_to_message
     if reply:
-        red = requests.get("https://api.rei.my.id/v3/slap").json()
+        res = requests.get("https://api.rei.my.id/v3/slap").json()
         url = res["url"]
         reply.reply_animation(url)
         
