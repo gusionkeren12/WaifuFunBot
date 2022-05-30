@@ -54,9 +54,9 @@ async def gbams(_, m: Message):
 @bot.on_message(filters.command('meme'))
 def meme(_,message: Message):
       res = requests.get('https://some-random-api.ml/meme').json()
-        url = res['image']
-        text = res['caption']
-        message.reply_photo(photo=url, caption=text)
+      url = res['image']
+      text = res['caption']
+      message.reply_photo(photo=url, caption=text)
 
       
 @bot.on_message(filters.command("joke"))
