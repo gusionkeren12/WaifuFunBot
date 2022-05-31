@@ -62,6 +62,6 @@ here the anime help & commads
 
 @bot.on_callback_query(filters.regex("_help"))
 async def help(_, query: CallbackQuery):
-    await query.edit_caption("test man")
+    await query.message.edit_caption("test man")
                
         
