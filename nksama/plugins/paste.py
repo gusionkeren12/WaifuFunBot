@@ -7,7 +7,7 @@ import requests
 
 from pyrogram import Client, filters
 from nksama import bot
-from pyrogram.types import Messages 
+from pyrogram.types import Message
 
 #Headers
 headers = {
