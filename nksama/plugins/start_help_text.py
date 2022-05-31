@@ -27,7 +27,7 @@ async def start(_, m: Message):
             InlineKeyboardButton(
                 "ADD ME", url="t.me/VegetaRobot?startgroup=true"),
             InlineKeyboardButton(
-                "help", callback_data='_help'),]]
+                "HELP", callback_data='help_back'),]]
 
     await m.reply_photo(
         random.choice(BOT_IMG),
@@ -37,12 +37,9 @@ async def start(_, m: Message):
 
           
 HELP_TEXT = """
-Hello! Dear {}
+Hello! Dear *{}*
 
-here my help and commands list! 
-
-• /animehelp - for my anime commands list!
-• /devhelp - for my developer commands list! 
+here my help and commands!
 """
          
 @bot.on_message(filters.command(["help"], ["/", ".", "?"]))
@@ -50,18 +47,9 @@ async def start(_, m: Message):
    
        await m.reply_text(HELP_TEXT.format(m.from_user.mention))
            
-  
-ANIME_TEXT = """
 
-hello! Dear {}
-
-here the anime help & commads
-
-• /neko - 
-"""
-
-@bot.on_callback_query(filters.regex("_help"))
+@bot.on_callback_query(filters.regex("help_back"))
 async def help(_, query: CallbackQuery):
-    await query.message.edit_caption("test man")
+    await query.message.edit_caption(HELP_TEXT.format(query.message.from_user.mention))
                
         
