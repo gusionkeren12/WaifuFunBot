@@ -1,12 +1,12 @@
 import os
 from nksama.utils.fonts import Fonts
 from pyrogram import Client, filters
-from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
+from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message 
 from nksama import bot
 
 
 @bot.on_message(filters.command("font"))
-async def style_buttons(c, m, cb=False):
+async def style_buttons(c, m: Message, cb=False):
     text = await bot.copy_message(m.relpy_to_message.text)
     buttons = [[
         InlineKeyboardButton('𝚃𝚢𝚙𝚎𝚠𝚛𝚒𝚝𝚎𝚛', callback_data='style+typewriter'),
