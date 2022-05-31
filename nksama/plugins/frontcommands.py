@@ -59,7 +59,7 @@ async def style_buttons(c, m, cb=False):
         await m.message.edit_reply_markup(InlineKeyboardMarkup(buttons))
 
 
-@Client.on_callback_query(filters.regex('^nxt'))
+@bot.on_callback_query(filters.regex('^nxt'))
 async def nxt(c, m):
     if m.data == "nxt":
         buttons = [[
@@ -95,7 +95,7 @@ async def nxt(c, m):
         await style_buttons(c, m, cb=True)
 
 
-@Client.on_callback_query(filters.regex('^style'))
+@bot.on_callback_query(filters.regex('^style'))
 async def style(c, m):
     await m.answer()
     cmd, style = m.data.split('+')
