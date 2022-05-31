@@ -9,7 +9,7 @@ async def wikipediasearch(_, message: Message):
     reply = message.reply_to_message
     query =  message.text.split(None, 1)[1] 
     if not query:
-        await reply_text("Invalid Syntax see help menu to know how to use this command")
+        await message.reply_text("Invalid Syntax see help menu to know how to use this command")
         return
     results = wikipedia.search(query)
     result = ""
