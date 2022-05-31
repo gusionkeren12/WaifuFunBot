@@ -56,7 +56,8 @@ async def start(_, m: Message):
   
 @bot.on_callback_query(filters.regex("help_back"))
 async def help(_, query: CallbackQuery):
-    await query.message.edit_caption(HELP_TEXT.format(query.message.reply_to_message.from_user.mention),
+    mention = query.message.reply_to_message.from_user.mention
+    await query.message.edit_caption(HELP_TEXT,
                                     reply_markup=InlineKeyboardMarkup(HELP_BUTTON),)
                
 @bot.on_callback_query(filters.regex("close"))
@@ -83,5 +84,4 @@ async def ahelp(_, query: CallbackQuery):
      BUTTON = [[InlineKeyboardButton("back 🔙", callback_data="help_back"),
             InlineKeyboardButton("close 🗑", callback_data='close'),]]
 
-     await query.message.edit_caption(ANIME_TEXT),
-     reply_markup=InlineKeyboardMarkup(BUTTON)
+     await query.message.edit_caption(ANIME_TEXT,reply_markup=InlineKeyboardMarkup(BUTTON)
