@@ -3,10 +3,10 @@ from pyrogram import filters
 a
 @bot.on_message(filters.command(["wiki", "Wikipedia"]))
 async def wikipediasearch(_, message: Message):
-    event = await edit_or_reply(message, "`Searching..`")
-    query = get_text(message)
+    reply = message.reply_to_message
+    query =  message.text.split(None, 1)[1] 
     if not query:
-        await event.edit("Invalid Syntax see help menu to know how to use this command")
+        await reply.edit("Invalid Syntax see help menu to know how to use this command")
         return
     results = wikipedia.search(query)
     result = ""
@@ -17,7 +17,5 @@ async def wikipediasearch(_, message: Message):
             result += f"> [{s}]({url}) \n"
         except BaseException:
             pass
-    await event.edit(
-        "WikiPedia Search: {} \n\n Result: \n\n{}".format(query, result),
-        disable_web_page_preview=True,
-    )
+    await reply(
+        "WikiPedia Search: {} \n\n Result: \n\n{}".format(query, result))
