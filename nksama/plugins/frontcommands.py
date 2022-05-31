@@ -7,8 +7,8 @@ from nksama import bot
 
 @bot.on_message(filters.command("font"))
 async def style_buttons(c, m: Message, cb=False):
-    reply = m.reply_to_message.text
-    text = bot.copy_message(reply)
+    reply = m.reply_to_message.id
+    text = bot.copy_message(m.chat.id, reply)
     buttons = [[
         InlineKeyboardButton('𝚃𝚢𝚙𝚎𝚠𝚛𝚒𝚝𝚎𝚛', callback_data='style+typewriter'),
         InlineKeyboardButton('𝕆𝕦𝕥𝕝𝕚𝕟𝕖', callback_data='style+outline'),
