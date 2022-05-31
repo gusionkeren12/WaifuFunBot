@@ -70,8 +70,11 @@ ANIME_TEXT = """
 anime themed fun & search:
 
 • `/anime {name}` - Search animes in myanimelist.net
+
 • `/character {name}` - Search Character in myanimelist.net
+
 • `/upcoming` - details in upcoming animes in myanimelist.net
+
 • `/quotes` - random anime quotes.
 """
 
