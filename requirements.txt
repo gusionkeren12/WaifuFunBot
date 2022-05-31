@@ -17,3 +17,4 @@ motor
 tracemoepy
 gpytranslate
 jikanpy
+wikipedia
