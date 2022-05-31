@@ -1,5 +1,6 @@
 import wikipedia
 from pyrogram import filters
+from nksama import bot
 
 
 @bot.on_message(filters.command(["wiki", "Wikipedia"]))
