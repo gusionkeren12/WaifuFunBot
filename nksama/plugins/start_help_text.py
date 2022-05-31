@@ -65,3 +65,16 @@ async def close(_, query: CallbackQuery):
            await query.message.delete()
            await bot.send_message(query.message.chat.id, 
                                   f"query message deleted by {}".format(mention))
+ 
+ANIME_TEXT = """
+anime themed fun & search:
+
+• `/anime {name}` - Search animes in myanimelist.net
+• `/character {name}` - Search Character in myanimelist.net
+• `/upcoming` - details in upcoming animes in myanimelist.net
+• `/quotes` - random anime quotes.
+"""
+
+@bot.on_callback_query(filters.regex("anime_help"))
+async def help(_, query: CallbackQuery):
+        await query.message.edit_caption(ANIME_TEXT)
