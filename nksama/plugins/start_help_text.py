@@ -37,9 +37,9 @@ async def start(_, m: Message):
 
           
 HELP_TEXT = """
-Hello! Dear {}
-
-here my:\n**help and commands!**
+**Hello! Dear** {}
+**I'm prince Vegeta I will manage your groups and make your group joyful bellow check my
+help and commands!**
 """
 
 HELP_BUTTON = [[
@@ -59,4 +59,9 @@ async def help(_, query: CallbackQuery):
     await query.message.edit_caption(HELP_TEXT.format(query.message.reply_to_message.from_user.mention),
                                     reply_markup=InlineKeyboardMarkup(HELP_BUTTON),)
                
-        
+@bot.on_callback_query(filters.regex("close"))
+async def close(_, query: CallbackQuery):
+           mention = query.message.reply_to_message.from_user.mention
+           await query.message.delete()
+           await bot.send_message(query.message.chat.id, 
+                                  f"query message deleted by {}".format(mention))
