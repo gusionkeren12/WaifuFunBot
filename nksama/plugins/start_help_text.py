@@ -51,12 +51,12 @@ HELP_BUTTON = [[
 @bot.on_message(filters.command(["help"], ["/", ".", "?"]))
 async def start(_, m: Message):
    await m.reply_text(HELP_TEXT.format(m.from_user.mention),
-                      reply_markup=InlineKeyboardMarkup(buttons),)
+                      reply_markup=InlineKeyboardMarkup(HELP_BUTTON),)
            
   
 @bot.on_callback_query(filters.regex("help_back"))
 async def help(_, query: CallbackQuery):
     await query.message.edit_caption(HELP_TEXT.format(query.message.reply_to_message.from_user.mention),
-                                    reply_markup=InlineKeyboardMarkup(buttons),)
+                                    reply_markup=InlineKeyboardMarkup(HELP_BUTTON),)
                
         
