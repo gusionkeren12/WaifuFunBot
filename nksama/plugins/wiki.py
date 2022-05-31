@@ -1,6 +1,7 @@
 import wikipedia
 from pyrogram import filters
-a
+
+
 @bot.on_message(filters.command(["wiki", "Wikipedia"]))
 async def wikipediasearch(_, message: Message):
     reply = message.reply_to_message
