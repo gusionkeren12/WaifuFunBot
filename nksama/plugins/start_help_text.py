@@ -4,7 +4,7 @@ from pyrogram.types import Message
 from pyrogram.types.bots_and_keyboards.inline_keyboard_button import InlineKeyboardButton
 from pyrogram.types.bots_and_keyboards.inline_keyboard_markup import InlineKeyboardMarkup
 from nksama import bot, SUPPORT_CHAT
-
+from pyrogram.types import CallbackQuery
 
 
            
