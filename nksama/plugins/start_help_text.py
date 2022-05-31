@@ -77,7 +77,6 @@ anime themed fun & search:
 
 @bot.on_callback_query(filters.regex("anime_help"))
 async def ahelp(_, query: CallbackQuery):
-     await query.message.edit_caption(ANIME_TEXT),
-     reply_markup=InlineKeyboardMarkup(
+     await query.message.edit_caption(ANIME_TEXT),reply_markup=InlineKeyboardMarkup(
         [[InlineKeyboardButton('back 🔙', callback_data='help_back'),
           InlineKeyboardButton('close 🗑', callback_data='close')]],)
