@@ -79,4 +79,4 @@ anime themed fun & search:
 async def animehelp(_, query: CallbackQuery):
         await query.message.edit_caption(ANIME_TEXT),reply_markup=InlineKeyboardMarkup(
         [[InlineKeyboardButton('back 🔙', callback_data='help_back'),
-          InlineKeyboardButton('close 🗑', callback_data='close')]]
+          InlineKeyboardButton('close 🗑', callback_data='close')]],)
