@@ -1,5 +1,5 @@
 import wikipedia
-from pyrogram.tpyes import Message 
+from pyrogram.types import Message 
 from pyrogram import filters
 from nksama import bot
 
