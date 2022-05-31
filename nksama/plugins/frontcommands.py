@@ -4,11 +4,8 @@ from pyrogram import Client, filters
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message 
 from nksama import bot
 
-
 @bot.on_message(filters.command("font"))
 async def style_buttons(c, m: Message, cb=False):
-    message_id = m.reply_to_message.id
-    text = bot.copy_message(m.chat.id,m.chat.id, message_id)
     buttons = [[
         InlineKeyboardButton('𝚃𝚢𝚙𝚎𝚠𝚛𝚒𝚝𝚎𝚛', callback_data='style+typewriter'),
         InlineKeyboardButton('𝕆𝕦𝕥𝕝𝕚𝕟𝕖', callback_data='style+outline'),
@@ -55,7 +52,7 @@ async def style_buttons(c, m: Message, cb=False):
         InlineKeyboardButton('Next ➡️', callback_data="nxt")
     ]]
     if not cb:
-        await m.reply_text(text, reply_markup=InlineKeyboardMarkup(buttons), quote=True)
+        await m.reply_text(m.text, reply_markup=InlineKeyboardMarkup(buttons), quote=True)
     else:
         await m.answer()
         await m.message.edit_reply_markup(InlineKeyboardMarkup(buttons))
