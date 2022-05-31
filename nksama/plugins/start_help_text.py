@@ -37,9 +37,9 @@ async def start(_, m: Message):
 
           
 HELP_TEXT = """
-Hello! Dear *{}*
+Hello! Dear {}
 
-here my help and commands!
+here my:\n**help and commands!**
 """
          
 @bot.on_message(filters.command(["help"], ["/", ".", "?"]))
@@ -50,6 +50,6 @@ async def start(_, m: Message):
 
 @bot.on_callback_query(filters.regex("help_back"))
 async def help(_, query: CallbackQuery):
-    await query.message.edit_caption(HELP_TEXT.format(query.message.from_user.mention))
+    await query.message.edit_caption(HELP_TEXT.format(query.message.reply_to_message.from_user.mention))
                
         
