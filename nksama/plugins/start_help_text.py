@@ -64,7 +64,7 @@ async def close(_, query: CallbackQuery):
            mention = query.message.reply_to_message.from_user.mention
            await query.message.delete()
            await bot.send_message(query.message.chat.id, 
-                                  f"query message deleted by {}".format(mention))
+                                  f"query message deleted by {mention}")
  
 ANIME_TEXT = """
 anime themed fun & search:
