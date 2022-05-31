@@ -84,4 +84,5 @@ async def ahelp(_, query: CallbackQuery):
      BUTTON = [[InlineKeyboardButton("back 🔙", callback_data="help_back"),
             InlineKeyboardButton("close 🗑", callback_data='close'),]]
 
-     await query.message.edit_caption(ANIME_TEXT,reply_markup=InlineKeyboardMarkup(BUTTON)
+     await query.message.edit_caption(ANIME_TEXT,
+                                      reply_markup=InlineKeyboardMarkup(BUTTON),)
