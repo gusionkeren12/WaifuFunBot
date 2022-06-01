@@ -69,11 +69,11 @@ async def close(_, query: CallbackQuery):
 ANIME_TEXT = """
 anime themed fun & search:
 
-• `/anime {name}` - Search animes in myanimelist.net
+• `/anime {name}` - Search animes in myanimelist.net.
 
-• `/character {name}` - Search Character in myanimelist.net
+• `/character {name}` - Search Character in myanimelist.net.
 
-• `/upcoming` - details in upcoming animes in myanimelist.net
+• `/upcoming` - details in upcoming animes in myanimelist.net.
 
 • `/quotes` - random anime quotes.
 """
@@ -83,6 +83,18 @@ BUTTON = [[InlineKeyboardButton("back 🔙", callback_data="help_back"),
 
 
 @bot.on_callback_query(filters.regex("anime_help"))
-async def ahelp(_, query: CallbackQuery):
+async def animehelp(_, query: CallbackQuery):
      await query.message.edit_caption(ANIME_TEXT,
+                                      reply_markup=InlineKeyboardMarkup(BUTTON),)
+USERINFO_TEXT = """
+user info chat info:
+• `/id`- userid & chatid.
+• `/info`- userinformation.
+• `/ginfo`- chat information.
+• `/json`- full intention about user & chat.
+"""
+
+@bot.on_callback_query(filters.regex("userinfo_help"))
+async def animehelp(_, query: CallbackQuery):
+     await query.message.edit_caption(USERINFO_TEXT,
                                       reply_markup=InlineKeyboardMarkup(BUTTON),)
