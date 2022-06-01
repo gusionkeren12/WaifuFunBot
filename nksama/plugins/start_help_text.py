@@ -64,7 +64,7 @@ async def close(_, query: CallbackQuery):
            query = query.message
            await query.delete()
            await bot.send_message(query.chat.id, 
-                                  f"query message deleted by #{query.from_user.first_name}")
+                                  f"query message deleted by #{query.reply_to_message.from_user.first_name}")
  
 ANIME_TEXT = """
 anime themed fun & search:
@@ -88,10 +88,10 @@ async def animehelp(_, query: CallbackQuery):
                                       reply_markup=InlineKeyboardMarkup(BUTTON),)
 USERINFO_TEXT = """
 user info chat info:
-• `/id`- userid & chatid.
-• `/info`- userinformation.
-• `/ginfo`- chat information.
-• `/json`- full intention about user & chat.
+• /id - userid & chatid.
+• /info - userinformation.
+• /ginfo - chat information.
+• /json - full intention about user & chat.
 """
 
 @bot.on_callback_query(filters.regex("userinfo_help"))
@@ -101,16 +101,16 @@ async def userinfohelp(_, query: CallbackQuery):
 
 ADMIN_TEXT = """
 usage of admin cmds:
-• `/ban``- ban a user.
-• `/unban`- unban a user. 
-• `/del`- delete a message.
-• `/purge`- delete msg multi.
-• `/pin` - pin a message.
-• `/unpin` - unpin a message.
-• `/unpinall` - unpin all msg.
-• `/setgtitle` - set group title.
-• `/setgpic` - set group pic.
-• `/rgpic` - remove group pic.
+• /ban- ban a user.
+• /unban - unban a user. 
+• /del - delete a message.
+• /purge - delete msg multi.
+• /pin - pin a message.
+• /unpin - unpin a message.
+• /unpinall - unpin all msg.
+• /setgtitle - set group title.
+• /setgpic - set group pic.
+• /rgpic - remove group pic.
 """
 
 @bot.on_callback_query(filters.regex("admin_help"))
