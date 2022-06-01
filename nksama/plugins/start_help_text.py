@@ -62,9 +62,11 @@ async def help(_, query: CallbackQuery):
                
 @bot.on_callback_query(filters.regex("close"))
 async def close(_, query: CallbackQuery):
-           mention = query.message.reply_to_message.from_user.mention or query.message.from_user.mention
-           await query.message.delete()
-           await bot.send_message(query.message.chat.id, 
+           query = query.message
+           elif (query.from_user.mention or query.reply_to_message.from_user.mention):
+           mention = query.reply_to_message.from_user.mention or query.from_user.mention
+           await query.delete()
+           await bot.send_message(query.chat.id, 
                                   f"query message deleted by {mention}")
  
 ANIME_TEXT = """
