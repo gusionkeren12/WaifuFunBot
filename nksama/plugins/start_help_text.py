@@ -95,6 +95,6 @@ user info chat info:
 """
 
 @bot.on_callback_query(filters.regex("userinfo_help"))
-async def animehelp(_, query: CallbackQuery):
+async def userinfohelp(_, query: CallbackQuery):
      await query.message.edit_caption(USERINFO_TEXT,
                                       reply_markup=InlineKeyboardMarkup(BUTTON),)
