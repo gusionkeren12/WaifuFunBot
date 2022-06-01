@@ -57,7 +57,7 @@ async def start(_, m: Message):
 @bot.on_callback_query(filters.regex("help_back"))
 async def help(_, query: CallbackQuery):
     mention = query.message.reply_to_message.from_user.mention or query.message.from_user.mention
-    await query.message.edit_caption(HELP_TEXT,
+    await query.message.edit_caption(HELP_TEXT.format(mention),
                                     reply_markup=InlineKeyboardMarkup(HELP_BUTTON),)
                
 @bot.on_callback_query(filters.regex("close"))
