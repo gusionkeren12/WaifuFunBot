@@ -37,7 +37,7 @@ async def start(_, m: Message):
 
           
 HELP_TEXT = """
-**Hello! Dear** {}
+**Hello Dear**!
 **I'm prince Vegeta I will manage your groups and make your group joyful bellow check my
 help and commands!**
 """
@@ -63,8 +63,8 @@ async def help(_, query: CallbackQuery):
 async def close(_, query: CallbackQuery):
            query = query.message
            await query.delete()
-           await bot.send_messagwe(query.chat.id, 
-                                  f"query message deleted by {mention}")
+           await bot.send_message(query.chat.id, 
+                                  f"query message deleted by #{query.from_user.first_name}")
  
 ANIME_TEXT = """
 anime themed fun & search:
