@@ -37,7 +37,7 @@ async def start(_, m: Message):
 
           
 HELP_TEXT = """
-**Hello Dear**!
+**Hello! Dear** {}
 **I'm prince Vegeta I will manage your groups and make your group joyful bellow check my
 help and commands!**
 """
@@ -55,8 +55,9 @@ async def start(_, m: Message):
            
   
 @bot.on_callback_query(filters.regex("help_back"))
-async def help(_, query: CallbackQuery):
-    await query.message.edit_caption(HELP_TEXT,
+async def help(_, m: Message, query: CallbackQuery):
+    mention = m.from_user.mention
+    await query.message.edit_caption(HELP_TEXT.format(mention),
                                     reply_markup=InlineKeyboardMarkup(HELP_BUTTON),)
                
 @bot.on_callback_query(filters.regex("close"))
@@ -98,3 +99,23 @@ user info chat info:
 async def userinfohelp(_, query: CallbackQuery):
      await query.message.edit_caption(USERINFO_TEXT,
                                       reply_markup=InlineKeyboardMarkup(BUTTON),)
+
+ADMIN_TEXT = """
+usage of admin cmds:
+• `/ban``- ban a user.
+• `/unban`- unban a user. 
+• `/del`- delete a message.
+• `/purge`- delete msg multi.
+• `/pin` - pin a message.
+• `/unpin` - unpin a message.
+• `/unpinall` - unpin all msg.
+• `/setgtitle` - set group title.
+• `/setgpic` - set group pic.
+• `/rgpic` - remove group pic.
+"""
+
+@bot.on_callback_query(filters.regex("admin_help"))
+async def adminhelp(_, query: CallbackQuery):
+     await query.message.edit_caption(ADMIN_TEXT,
+                                      reply_markup=InlineKeyboardMarkup(BUTTON),)
+
