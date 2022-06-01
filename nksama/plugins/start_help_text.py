@@ -37,7 +37,7 @@ async def start(_, m: Message):
 
           
 HELP_TEXT = """
-**Hello! Dear** {}
+**Hello Dear**!
 **I'm prince Vegeta I will manage your groups and make your group joyful bellow check my
 help and commands!**
 """
@@ -55,9 +55,8 @@ async def start(_, m: Message):
            
   
 @bot.on_callback_query(filters.regex("help_back"))
-async def help(_, m: Message, query: CallbackQuery):
-    mention = m.from_user.mention
-    await query.message.edit_caption(HELP_TEXT.format(mention),
+async def help(_, query: CallbackQuery):
+    await query.message.edit_caption(HELP_TEXT,
                                     reply_markup=InlineKeyboardMarkup(HELP_BUTTON),)
                
 @bot.on_callback_query(filters.regex("close"))
