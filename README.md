@@ -11,7 +11,7 @@
 <details><summary><b>Deploy To VPS</b></summary>
 <p>
 <pre>
-git clone https://github.com/Ctzfamily/WaifuFunBot
+git clone https://github.com/gusionkeren12/WaifuFunBot
 cd WaifuFunBot
 # Install Packages
 pip3 install --upgrade -r requirements.txt
